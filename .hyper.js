@@ -46,8 +46,8 @@ module.exports = {
     borderColor: '#333',
 
     // custom css to embed in the main window
-    css: '',
-
+    css: '.terminal, .term_fit:not(.term_term) {opacity: 1 !important;}',
+    
     // custom css to embed in the terminal window
     termCSS: '',
 
@@ -129,9 +129,9 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+    'hyper-snazzy',
     'hyper-tabs-enhanced',
     'hyperterm-paste',
-    'verminal',
     'hyper-search'
   ],
 
