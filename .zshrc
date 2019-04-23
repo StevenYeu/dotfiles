@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/stevenyeu/.oh-my-zsh
@@ -95,9 +95,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias h="cd ~"
+alias proj="cd ~/Projects"
+alias dl="cd ~/Downloads"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-export PATH=$PATH:/Applications/MATLAB_R2018a.app/bin/
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+
