@@ -19,15 +19,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH"$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-export PATH="/Library/TeX/texbin:$PATH"
-
 [[ -s "/Users/stevenyeu/.gvm/scripts/gvm" ]] && source "/Users/stevenyeu/.gvm/scripts/gvm"
-
 export XDG_CONFIG_HOME="$HOME/.config"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
