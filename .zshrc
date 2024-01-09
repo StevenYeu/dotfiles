@@ -7,6 +7,7 @@ git
 zsh-syntax-highlighting
 zsh-autosuggestions
 zsh-nvm
+zsh-vi-mode
 )
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
@@ -19,6 +20,9 @@ alias tl="tmux ls"
 alias tss="tmux-switch.sh"
 alias op=". open-project.sh"
 alias ls="eza"
+
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH"$PYENV_ROOT/bin:$PATH"
