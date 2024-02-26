@@ -13,7 +13,7 @@ zsh-vi-mode
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 source $ZSH/oh-my-zsh.sh
 
-alias tms="tmux-sessionizer" 
+alias tms="tmux-sessionizer.sh" 
 alias vim="nvim"
 alias tmm="tmux new -A -s main"
 alias tl="tmux ls"

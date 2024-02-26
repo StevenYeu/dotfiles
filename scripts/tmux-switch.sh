@@ -7,7 +7,7 @@ fi
 
 
 if [[ -z $selected ]]; then
-    exit 0
+   return 
 fi
 
 selected_session=$(echo $selected | awk -F ":" '{print $1}')
