@@ -1,4 +1,3 @@
-
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
@@ -7,7 +6,7 @@ fi
 
 
 if [[ -z $selected ]]; then
-   return 
+    exit 0
 fi
 
 selected_session=$(echo $selected | awk -F ":" '{print $1}')
