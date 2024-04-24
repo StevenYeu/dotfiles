@@ -1,7 +1,6 @@
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="refined"
-
+ZSH_THEME=""
 plugins=(
 git
 zsh-syntax-highlighting
@@ -11,6 +10,7 @@ zsh-vi-mode
 )
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 source $ZSH/oh-my-zsh.sh
 
 alias tms="tmux-sessionizer.sh" 
@@ -40,4 +40,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+eval "$(starship init zsh)"
 
