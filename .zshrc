@@ -9,8 +9,8 @@ git
 zsh-syntax-highlighting
 zsh-autosuggestions
 zsh-nvm
-zsh-vi-mode
 asdf
+vi-mode
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -21,27 +21,64 @@ alias tl="tmux ls"
 alias tks="tmux kill-server"
 alias tss="tmux-switch.sh"
 alias op=". open-project.sh"
-alias ls="eza"
+alias ls="eza --long --color=always"
+alias lsbp="eza --long --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias dcupd="docker compose up -d --build"
 alias dcd="docker compose down"
 alias dps="docker ps"
 
+# Vim mode for zsh
 export VI_MODE_SET_CURSOR=true
-ZVM_VI_EDITOR=/opt/homebrew/bin/nvim
-ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+VI_MODE_CURSOR_INSERT=0
 
+# Pyenv setup
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH"$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-
+# Go version manager setup
 [[ -s "/Users/stevenyeu/.gvm/scripts/gvm" ]] && source "/Users/stevenyeu/.gvm/scripts/gvm"
 
+# Fzf setup
+source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix -execlude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAD"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_OPTS="
+	--color=fg:#908caa,bg:#191724,hl:#ebbcba
+	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
+	--color=border:#403d52,header:#31748f,gutter:#191724
+	--color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
+	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+
+_fzf_compgen_path(){
+    fd --hidden --exclude .git . "$1"
+} 
+
+
+_fzf_compgen_dir(){
+    fd --type=d --hidden --exclude .git . "$1"
+} 
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+}
+source ~/Repos/fzf-git.sh/fzf-git.sh
+
+# Bat 
+export BAT_THEME=tokyonight_night
+
+# Starship
 eval "$(starship init zsh)"
 
-function zvm_after_init() {
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-}
