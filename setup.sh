@@ -29,6 +29,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ## Configure Bat
 mkdir -p "$(bat --config-dir)/themes"
 cp ./bat-themes/* "$(bat --config-dir)/themes"
+bat cache --build
+
 
 ## Configure git fzf
 git clone https://github.com/junegunn/fzf-git.sh.git $HOME/Repos/fzf-git.sh
