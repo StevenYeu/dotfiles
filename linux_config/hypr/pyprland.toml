@@ -10,3 +10,15 @@ animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "75% 60%"
+
+[scratchpads.audio]
+animation = "fromTop"
+command = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
+size = "75% 60%"
+
+[scratchpads.chrome]
+animation = "fromTop"
+command = 'google-chrome --profile-directory="Profile 1"'
+class = "google-chrome"
+size = "75% 75%"
