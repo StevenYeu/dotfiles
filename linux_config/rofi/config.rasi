@@ -5,7 +5,7 @@
 
 /* ---- Configuration ---- */
 configuration {
-	font:	"Fira Code SemiBold 13";
+	font:	"GeistMono NFM SemiBold 13";
 }
 /* ---- Window ---- */
 window {
