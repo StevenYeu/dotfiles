@@ -16,6 +16,15 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cp ./.zshrc $HOME/.zshrc
 
+## Setup Aerospace 
+cp ./.aerospace.toml $HOME/.areospace.toml
+
+## Setup JankyBorders
+cp -r ./config/borders $HOME/.config/
+
+## Setup wezterm
+cp ./.wezterm.lua $HOME/.wezterm.lua
+
 ## Setup Tmux
 cp ./.tmux.conf $HOME/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

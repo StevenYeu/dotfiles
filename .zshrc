@@ -2,6 +2,7 @@ export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 ZSH_THEME=""
 plugins=(
