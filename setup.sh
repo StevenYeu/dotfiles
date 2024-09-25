@@ -7,6 +7,7 @@ xcode-select --install
 mkdir -p $HOME/.local/bin
 cp ./scripts/* $HOME/.local/bin
 mkdir $HOME/Repos
+mkdir $HOME/Projects
 
 ## Zsh setup
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -17,10 +18,11 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cp ./.zshrc $HOME/.zshrc
 
 ## Setup Aerospace 
-cp ./.aerospace.toml $HOME/.areospace.toml
+cp ./.aerospace.toml $HOME/.aerospace.toml
 
 ## Setup JankyBorders
-cp -r ./config/borders $HOME/.config/
+mkdir $HOME/.config/borders
+cp -r ./config/borders $HOME/.config/borders
 
 ## Setup wezterm
 cp ./.wezterm.lua $HOME/.wezterm.lua
@@ -30,7 +32,7 @@ cp ./.tmux.conf $HOME/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Install gvm
-zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 
 ## Install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
