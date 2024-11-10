@@ -1,5 +1,4 @@
 ## Homebrew etup
-xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 /opt/homebrew/bin/brew bundle install
 
@@ -19,10 +18,6 @@ cp ./.zshrc $HOME/.zshrc
 
 ## Setup Aerospace 
 cp ./.aerospace.toml $HOME/.aerospace.toml
-
-## Setup JankyBorders
-mkdir $HOME/.config/borders
-cp -r ./config/borders $HOME/.config/borders
 
 ## Setup wezterm
 cp ./.wezterm.lua $HOME/.wezterm.lua
