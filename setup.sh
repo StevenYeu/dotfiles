@@ -41,3 +41,7 @@ bat cache --build
 ## Configure git fzf
 git clone https://github.com/junegunn/fzf-git.sh.git $HOME/Repos/fzf-git.sh
 cp ./.gitconfig ~/
+
+## Copy over wallpapers
+mkdir -p $HOME/Pictures/Wallpapers
+cp -r ./Wallpapers/ $HOME/Picutres/Wallpapers/
