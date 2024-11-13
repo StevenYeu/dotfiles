@@ -1,7 +1,3 @@
-## Homebrew etup
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-/opt/homebrew/bin/brew bundle install
-
 ## Script setup
 mkdir -p $HOME/.local/bin
 cp ./scripts/* $HOME/.local/bin
@@ -26,11 +22,6 @@ cp ./.wezterm.lua $HOME/.wezterm.lua
 cp ./.tmux.conf $HOME/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-## Install gvm
-# zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-
-## Install rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ## Configure Bat
 mkdir -p "$(bat --config-dir)/themes"
