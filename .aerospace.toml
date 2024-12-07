@@ -13,7 +13,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-'exec-and-forget borders style=round hidpi=true active_color=0xffc4a7e7 inactive_color==0xff21202e width=6.0'
+# 'exec-and-forget borders style=round hidpi=true active_color=0xffc4a7e7 inactive_color==0xff21202e width=6.0'
 ]
 
 # Start AeroSpace at login
@@ -75,10 +75,10 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-h = 'focus left --boundaries-action wrap-around-the-workspace'
+alt-j = 'focus down --boundaries-action wrap-around-the-workspace'
+alt-k = 'focus up --boundaries-action wrap-around-the-workspace'
+alt-l = 'focus right --boundaries-action wrap-around-the-workspace'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-ctrl-h = 'move left'
@@ -89,6 +89,7 @@ alt-ctrl-l = 'move right'
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-h = 'resize smart -50'
 alt-shift-l = 'resize smart +50'
+alt-shift-e = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -103,11 +104,12 @@ alt-9 = 'workspace 9'
 alt-s = 'workspace S'
 alt-z = 'workspace Z'
 alt-x = 'workspace X'
-alt-a = 'workspace A'
 alt-t = 'workspace T'
 alt-w = 'workspace W'
 alt-f = 'workspace F'
 alt-o = 'workspace O'
+alt-g = 'workspace G'
+alt-n = 'workspace N'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-ctrl-1 = 'move-node-to-workspace 1'
@@ -119,9 +121,18 @@ alt-ctrl-6 = 'move-node-to-workspace 6'
 alt-ctrl-7 = 'move-node-to-workspace 7'
 alt-ctrl-8 = 'move-node-to-workspace 8'
 alt-ctrl-9 = 'move-node-to-workspace 9'
+alt-ctrl-s = 'move-node-to-workspace S'
+alt-ctrl-z = 'move-node-to-workspace Z'
+alt-ctrl-x = 'move-node-to-workspace X'
+alt-ctrl-t = 'move-node-to-workspace T'
+alt-ctrl-w = 'move-node-to-workspace W'
+alt-ctrl-f = 'move-node-to-workspace F'
+alt-ctrl-o = 'move-node-to-workspace O'
+alt-ctrl-g = 'move-node-to-workspace G'
+alt-ctrl-n = 'move-node-to-workspace N'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'workspace-back-and-forth'
+# Sectrl-e: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+alt-ctrl-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
@@ -146,18 +157,10 @@ alt-shift-l = ['join-with right', 'mode main']
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace S'
 
-# [[on-window-detected]]
-# if.app-id = 'com.github.wez.wezterm'
-# run = 'move-node-to-workspace 2'
-
 [[on-window-detected]]
 if.app-id = 'com.oecoway.friendlynetflix'
 run = 'move-node-to-workspace W'
 
-# [[on-window-detected]]
-# if.app-id = 'org.mozilla.com.zen.browser'
-# run = 'move-node-to-workspace 1'
-#
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
 run = 'move-node-to-workspace Z'
@@ -172,7 +175,7 @@ run = 'move-node-to-workspace X'
 
 [[on-window-detected]]
 if.app-id = 'com.google.android.studio'
-run = 'move-node-to-workspace A'
+run = 'move-node-to-workspace X'
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
@@ -203,9 +206,21 @@ if.app-id = 'com.apple.finder'
 run = 'move-node-to-workspace F'
 
 [[on-window-detected]]
+if.app-id = 'org.m0k.transmission'
+run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
 run = 'move-node-to-workspace O'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.datagrip'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.sonos.macControl'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace N'
