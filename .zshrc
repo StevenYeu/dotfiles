@@ -27,6 +27,7 @@ alias lsbp="eza --long --color=always --git --no-filesize --icons=always --no-ti
 alias dcupd="docker compose up -d --build"
 alias dcd="docker compose down"
 alias dps="docker ps"
+alias clr="clear"
 
 # Vim mode for zsh
 export VI_MODE_SET_CURSOR=true
@@ -44,7 +45,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # Fzf setup
 source <(fzf --zsh)
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix -execlude .git"
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAD"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="
@@ -78,7 +79,18 @@ _fzf_comprun() {
 source ~/Repos/fzf-git.sh/fzf-git.sh
 
 # Bat 
-export BAT_THEME=tokyonight_night
+export BAT_THEME=rose-pine
+
+# Yazi
+export EDITOR="nvim"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Starship
 eval "$(starship init zsh)"
