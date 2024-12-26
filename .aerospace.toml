@@ -65,7 +65,6 @@ outer.right =      12
 [mode.main.binding]
 
 # alt-d = 'exec-and-forget /opt/homebrew/bin/kitty --directory ~/ --single-instance &'
-alt-d = 'exec-and-forget wezterm cli spawn --new-window --cwd CWD'
 alt-shift-m = 'fullscreen'
 cmd-h = [] # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
@@ -179,6 +178,10 @@ run = 'move-node-to-workspace X'
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
