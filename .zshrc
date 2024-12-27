@@ -28,6 +28,7 @@ alias dcupd="docker compose up -d --build"
 alias dcd="docker compose down"
 alias dps="docker ps"
 alias clr="clear"
+alias lg="lazygit"
 
 # Vim mode for zsh
 export VI_MODE_SET_CURSOR=true
@@ -95,3 +96,5 @@ function y() {
 # Starship
 eval "$(starship init zsh)"
 
+# Zoxide 
+eval "$(zoxide init zsh)"
