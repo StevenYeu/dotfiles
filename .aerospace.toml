@@ -150,7 +150,11 @@ run = 'move-node-to-workspace web'
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace telecom'
+run = 'move-node-to-workspace social'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace social'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.dt.Xcode'
@@ -164,9 +168,9 @@ run = 'move-node-to-workspace ide'
 if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace ide'
 
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace term'
+# [[on-window-detected]]
+# if.app-id = 'com.github.wez.wezterm'
+# run = 'move-node-to-workspace term'
 
 # [[on-window-detected]]
 # if.app-id = 'com.mitchellh.ghostty'
@@ -206,7 +210,7 @@ run = 'move-node-to-workspace other'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.datagrip'
-run = 'move-node-to-workspace other'
+run = 'move-node-to-workspace ide'
 
 [[on-window-detected]]
 if.app-id = 'com.sonos.macControl'
