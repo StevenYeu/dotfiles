@@ -93,10 +93,8 @@ alt-shift-e = 'balance-sizes'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
 alt-s = 'workspace music'
-alt-z = 'workspace telecom'
+alt-z = 'workspace social'
 alt-x = 'workspace ide'
 alt-t = 'workspace term'
 alt-w = 'workspace web'
@@ -104,14 +102,13 @@ alt-f = 'workspace files'
 alt-o = 'workspace other'
 alt-g = 'workspace games'
 alt-n = 'workspace notes'
+alt-r = 'workspace reading'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-ctrl-1 = 'move-node-to-workspace 1'
 alt-ctrl-2 = 'move-node-to-workspace 2'
-alt-ctrl-3 = 'move-node-to-workspace 3'
-alt-ctrl-4 = 'move-node-to-workspace 4'
 alt-ctrl-s = 'move-node-to-workspace music'
-alt-ctrl-z = 'move-node-to-workspace telecom'
+alt-ctrl-z = 'move-node-to-workspace social'
 alt-ctrl-x = 'move-node-to-workspace ide'
 alt-ctrl-t = 'move-node-to-workspace term'
 alt-ctrl-w = 'move-node-to-workspace web'
@@ -119,6 +116,7 @@ alt-ctrl-f = 'move-node-to-workspace files'
 alt-ctrl-o = 'move-node-to-workspace other'
 alt-ctrl-g = 'move-node-to-workspace games'
 alt-ctrl-n = 'move-node-to-workspace notes'
+alt-ctrl-r = 'move-node-to-workspace reading'
 
 # Sectrl-e: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-ctrl-tab = 'workspace-back-and-forth'
@@ -217,3 +215,11 @@ run = 'move-node-to-workspace music'
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace notes'
+
+[[on-window-detected]]
+if.app-id = 'com.bjango.istatmenus'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.yacreader.YACReader'
+run = 'move-node-to-workspace reading'
