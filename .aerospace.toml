@@ -223,3 +223,11 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.yacreader.YACReader'
 run = 'move-node-to-workspace reading'
+
+[[on-window-detected]]
+if.app-id = 'net.cecinestpasparis.yomu'
+run = 'move-node-to-workspace reading'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'move-node-to-workspace reading'
