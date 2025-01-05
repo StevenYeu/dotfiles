@@ -12,7 +12,7 @@ zsh-autosuggestions
 zsh-nvm
 zsh-autocomplete
 asdf
-vi-mode
+# vi-mode
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -31,9 +31,12 @@ alias dps="docker ps"
 alias clr="clear"
 alias lg="lazygit"
 
+bindkey -v
+bindkey '^n' menu-complete
+bindkey '^p' reverse-menu-complete
 # Vim mode for zsh
-export VI_MODE_SET_CURSOR=true
-VI_MODE_CURSOR_INSERT=0
+# export VI_MODE_SET_CURSOR=true
+# VI_MODE_CURSOR_INSERT=0
 
 # Pyenv setup
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1

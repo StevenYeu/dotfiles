@@ -12,3 +12,5 @@ window-padding-y = 20
 keybind = global:alt+d=toggle_quick_terminal
 keybind = shift+alt+f=toggle_fullscreen
 macos-option-as-alt = true
+cursor-style-blink = false
+shell-integration-features = no-cursor
