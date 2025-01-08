@@ -14,6 +14,7 @@ return {
     config = function()
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Search Git Files" })
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
         vim.keymap.set("n", "<leader>fl", function()
             builtin.live_grep({ file_ignore_patterns = { "vendor", "node_modules" } })
         end, { desc = "Live Search" })
