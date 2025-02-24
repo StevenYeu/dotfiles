@@ -12,7 +12,7 @@ zsh-syntax-highlighting
 zsh-autosuggestions
 zsh-nvm
 zsh-autocomplete
-asdf
+# asdf
 # vi-mode
 )
 source $ZSH/oh-my-zsh.sh

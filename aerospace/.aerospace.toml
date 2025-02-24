@@ -168,14 +168,6 @@ run = 'move-node-to-workspace ide'
 if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace ide'
 
-# [[on-window-detected]]
-# if.app-id = 'com.github.wez.wezterm'
-# run = 'move-node-to-workspace term'
-
-# [[on-window-detected]]
-# if.app-id = 'com.mitchellh.ghostty'
-# run = 'move-node-to-workspace term'
-
 [[on-window-detected]]
 if.app-id = 'org.mozilla.com.zen.browser'
 run = 'move-node-to-workspace web'
@@ -229,6 +221,10 @@ if.app-id = 'org.cogx.cog'
 run = 'move-node-to-workspace music'
 
 [[on-window-detected]]
+if.app-id = 'com.colliderli.iina'
+run = 'move-node-to-workspace music'
+[[on-window-detected]]
+
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace notes'
 
