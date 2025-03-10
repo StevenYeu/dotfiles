@@ -31,6 +31,7 @@ alias dcd="docker compose down"
 alias dps="docker ps"
 alias clr="clear"
 alias lg="lazygit"
+alias ldk="lazydocker"
 
 bindkey -v
 bindkey '^n' menu-complete
