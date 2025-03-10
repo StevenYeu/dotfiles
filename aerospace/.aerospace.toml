@@ -197,6 +197,10 @@ if.app-id = 'org.m0k.transmission'
 run = 'move-node-to-workspace files'
 
 [[on-window-detected]]
+if.app-id = 'com.panic.Transmit'
+run = 'move-node-to-workspace files'
+
+[[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
 run = 'move-node-to-workspace other'
 
