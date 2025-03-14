@@ -92,7 +92,6 @@ alt-shift-e = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
 alt-s = 'workspace music'
 alt-z = 'workspace social'
 alt-x = 'workspace ide'
@@ -119,9 +118,9 @@ alt-ctrl-n = 'move-node-to-workspace notes'
 alt-ctrl-r = 'move-node-to-workspace reading'
 
 # Sectrl-e: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-ctrl-tab = 'workspace-back-and-forth'
+# alt-ctrl-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+# alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
