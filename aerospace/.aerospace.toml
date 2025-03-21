@@ -168,7 +168,7 @@ if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace ide'
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.com.zen.browser'
+if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace web'
 
 [[on-window-detected]]
