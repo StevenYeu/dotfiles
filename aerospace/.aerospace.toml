@@ -91,12 +91,11 @@ alt-shift-l = 'resize smart +50'
 alt-shift-e = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
+alt-w = 'workspace web'
+alt-t = 'workspace term'
 alt-s = 'workspace music'
 alt-z = 'workspace social'
 alt-x = 'workspace ide'
-alt-t = 'workspace term'
-alt-w = 'workspace web'
 alt-f = 'workspace files'
 alt-o = 'workspace other'
 alt-g = 'workspace games'
@@ -104,8 +103,6 @@ alt-n = 'workspace notes'
 alt-r = 'workspace reading'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-ctrl-1 = 'move-node-to-workspace 1'
-alt-ctrl-2 = 'move-node-to-workspace 2'
 alt-ctrl-s = 'move-node-to-workspace music'
 alt-ctrl-z = 'move-node-to-workspace social'
 alt-ctrl-x = 'move-node-to-workspace ide'
