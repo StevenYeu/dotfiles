@@ -109,10 +109,17 @@ return {
         config = function()
             -- disagnostic signs
             local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-            for type, icon in pairs(signs) do
-                local hl = "DiagnosticSign" .. type
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-            end
+            -- Using the vim.diagnostic API with the 'signs' key
+            vim.diagnostic.config({
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = signs.Error,
+                        [vim.diagnostic.severity.WARN] = signs.Warning,
+                        [vim.diagnostic.severity.INFO] = signs.Information,
+                        [vim.diagnostic.severity.HINT] = signs.Hint,
+                    },
+                },
+            })
             local lsp_defaults = require('lspconfig').util.default_config
             lsp_defaults.capabilities = vim.tbl_deep_extend(
                 'force',

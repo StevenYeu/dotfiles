@@ -217,6 +217,10 @@ if.app-id = 'com.sonos.macControl'
 run = 'move-node-to-workspace music'
 
 [[on-window-detected]]
+if.app-id = 'com.sonos.macController2'
+run = 'move-node-to-workspace music'
+
+[[on-window-detected]]
 if.app-id = 'org.cogx.cog'
 run = 'move-node-to-workspace music'
 
