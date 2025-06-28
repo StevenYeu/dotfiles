@@ -1,0 +1,10 @@
+* {
+    background:     rgba(25, 23, 36, 0.65) ;
+    background-alt: #191724;
+    foreground:     #e0def4;
+    active:       #c4a7e7;
+    selected:         #ebbcba;
+    urgent:         #eb6f92;
+
+    font: "GeistMono NFM 24";
+}
