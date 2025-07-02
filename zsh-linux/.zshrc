@@ -17,7 +17,7 @@ alias tmm="tmux new -A -s main"
 alias tl="tmux ls"
 alias tks="tmux kill-server"
 alias tss="tmux-switch.sh"
-alias op=". open-project.sh"
+alias opn=". open-project.sh"
 alias opass="/usr/bin/op"
 alias ls="eza --long --color=always"
 alias lsbp="eza --long --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
@@ -28,6 +28,7 @@ alias clr="clear"
 alias lg="lazygit"
 alias ldk="lazydocker"
 alias g="~/.g/bin/g"
+alias snp="op item get Snippets --reveal --fields "
 
 bindkey -v
 bindkey '^n' menu-complete
@@ -95,3 +96,5 @@ eval "$(starship init zsh)"
 # Zoxide 
 eval "$(zoxide init zsh)"
 
+# 1password completion
+eval "$(op completion zsh)"; compdef _op op

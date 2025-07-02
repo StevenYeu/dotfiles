@@ -42,7 +42,8 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    color: @foreground;
+    /* color: @foreground; */
+    color: #ebbcba;
     background: #26233a;
 }
 
@@ -69,6 +70,15 @@ window#waybar.hidden {
     padding: 3px 6px;  /* Reduced padding */
     margin: 2px;
     opacity: 1;
+}
+
+#memory {
+    color: #f6c177;
+}
+
+#wireplumber {
+    color:#e0def4;
+
 }
 
 #clock,
@@ -204,7 +214,8 @@ window#waybar.hidden {
 }
 
 #clock {
-    color: #c8d2e0;
+    /* color: #c8d2e0; */
+    color: #ebbcba
 }
 
 #battery {
@@ -242,7 +253,8 @@ label:focus {
 }
 
 #bluetooth {
-    color: #707d9d;
+    /* color: #707d9d; */
+    color: #6e6a86;
 }
 
 #bluetooth.disconnected {
@@ -250,7 +262,7 @@ label:focus {
 }
 
 #network {
-    color: #b48ead;
+    color: #c4a7e7;
 }
 
 #network.disconnected {
