@@ -1,0 +1,4 @@
+plugins: chroma
+chroma:
+  auto: yes
+group_albums: yes
