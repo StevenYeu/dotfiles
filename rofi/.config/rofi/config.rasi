@@ -16,10 +16,9 @@ window {
     location:                    north;
     anchor:                      north;
     fullscreen:                  false;
-    width:                       700px;
+    width:                       25%;
     x-offset:                    0px;
-    y-offset:                    500px;
-
+    y-offset:                    33%;
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
