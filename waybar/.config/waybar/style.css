@@ -225,7 +225,7 @@ window#waybar.hidden {
 #battery.charging,
 #battery.full,
 #battery.plugged {
-    color: #26a65b;
+    color: #9ccfd8;
 }
 
 @keyframes blink {
