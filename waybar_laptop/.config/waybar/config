@@ -5,10 +5,10 @@
 
     "layer": "top",
     "position": "top",
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-left": 5,
+    "margin-right": 5,
 
-    "spacing": 5, // Gaps between modules
+    "spacing": 2, // Gaps between modules
 
     "modules-left": [
         "hyprland/workspaces"
@@ -79,9 +79,9 @@
         "warning": 30,
         "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
     "format-icons": [
         "",
         "",
@@ -116,7 +116,7 @@
 
 "backlight": {
     "device": "intel_backlight",
-    "format": "{icon} {percent}%",
+    "format": "{icon}  {percent}%",
     "format-alt": "{percent}% {icon}",
     "format-alt-click": "click-right",
     "format-icons": ["", ""],
@@ -250,6 +250,6 @@
     },
     "tray": {
         "icon-size": 15,
-        "spacing": 5
+        "spacing": 3
     }
 }
