@@ -98,3 +98,10 @@ eval "$(zoxide init zsh)"
 
 # 1password completion
 eval "$(op completion zsh)"; compdef _op op
+
+# Golang Version Manager
+if [[ -n $(alias g 2>/dev/null) ]]; then
+    unalias g
+fi
+[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup
+
