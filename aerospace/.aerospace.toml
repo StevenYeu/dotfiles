@@ -243,3 +243,7 @@ run = 'move-node-to-workspace reading'
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview'
 run = 'move-node-to-workspace reading'
+
+[[on-window-detected]]
+if.app-id = 'com.codeweavers.CrossOver'
+run = 'move-node-to-workspace games'
