@@ -12,8 +12,6 @@ zsh-syntax-highlighting
 zsh-autosuggestions
 zsh-nvm
 zsh-autocomplete
-# asdf
-# vi-mode
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -41,11 +39,11 @@ bindkey '^p' reverse-menu-complete
 # VI_MODE_CURSOR_INSERT=0
 
 # Pyenv setup
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Go version manager setup
 [[ -s "/Users/stevenyeu/.gvm/scripts/gvm" ]] && source "/Users/stevenyeu/.gvm/scripts/gvm"
