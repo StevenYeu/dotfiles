@@ -247,3 +247,7 @@ run = 'move-node-to-workspace reading'
 [[on-window-detected]]
 if.app-id = 'com.codeweavers.CrossOver'
 run = 'move-node-to-workspace games'
+
+[[on-window-detected]]
+if.app-id = 'com.firecore.infuse'
+run = 'move-node-to-workspace media'
