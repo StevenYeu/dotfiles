@@ -21,7 +21,7 @@ alias tmm="tmux new -A -s main"
 alias tl="tmux ls"
 alias tks="tmux kill-server"
 alias tss="tmux-switch.sh"
-alias op=". open-project.sh"
+alias opn=". open-project.sh"
 alias ls="eza --long --color=always"
 alias lsbp="eza --long --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias dcupd="docker compose up -d --build"
@@ -30,6 +30,7 @@ alias dps="docker ps"
 alias clr="clear"
 alias lg="lazygit"
 alias ldk="lazydocker"
+alias vpn="sudo openconnect --user syeu@ucsd.edu --authgroup '2-Step Secured - split' vpn.ucsd.edu"
 
 bindkey -v
 bindkey '^n' menu-complete
