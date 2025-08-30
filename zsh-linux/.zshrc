@@ -108,7 +108,3 @@ fi
 [ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup
 
 eval "$(uv generate-shell-completion zsh)"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uv generate-shell-completion zsh)"
