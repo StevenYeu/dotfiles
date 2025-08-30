@@ -54,22 +54,22 @@
         "on-click": "ghostty --class=btop -e btop"
     },
     "battery": {
-        "interval": 2,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
+        "format": "{capacity}% {icon}",
+        "format-discharging": "{icon}",
+        "format-charging": "{icon}",
+        "format-plugged": "",
+        "format-icons": {
+          "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+          "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "format-full": "󰂅",
+        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+        "interval": 5,
+        "states": {
+          "warning": 20,
+          "critical": 10
+        }
     },
     "network": {
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -85,10 +85,11 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}% {icon}",
+        "format": "{icon}",
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         "format-icons": ["", ""],
+        "tooltip-format": "{percent}%",
         "on-scroll-down": "brightnessctl s 5%-",
         "on-scroll-up": "brightnessctl s +5%"
     },
@@ -171,18 +172,13 @@
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        "format": "<span foreground='#ebbcba'>{icon}</span>  {volume}%",
-        "format-muted": " ",
-        "format-source": "",
-        "format-source-muted": "",
+        "format": "{icon}",        
+        "tooltip-format": "Volume {volume}%",
+        "scroll-step": 5,
+        "format-muted": "󰝟",
         "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "default": [" ", " ", " "]
-        },
+            "default": ["", "", ""]
+        } 
     },
     "group/tray-expander": {
         "orientation": "inherit",
