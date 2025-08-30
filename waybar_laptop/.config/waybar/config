@@ -5,26 +5,25 @@
 
     "layer": "top",
     "position": "top",
-    "margin-left": 5,
-    "margin-right": 5,
+    "margin-left": 10,
+    "margin-right": 10,
 
-    "spacing": 2, // Gaps between modules
+    "spacing": 3, // Gaps between modules
 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        //"memory",
+        "custom/pacman",
+        "custom/screenshot",
         "backlight",
         "battery",
-        "network",
-        "bluetooth",
         "wireplumber",
-        //"custom/screenshot_t",
-        "tray",
+        "network",
+        "group/tray-expander",
         "custom/power"
     ],
 
@@ -32,144 +31,90 @@
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
-"backlight": {
-    //"device": "intel_backlight",
-    "format": "{percent}% {icon}",
-    "format-icons": ["", ""]
-},
-"bluetooth": {
-	"format": " {status}",
-	"format-disabled": "", // an empty format will hide the module
-	//"format-connected": " {num_connections} connected",
-	"format-connected": " {num_connections}",
-	"tooltip-format": "{controller_alias}\t{controller_address}",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
-},
-"custom/screenshot_t":{
-    "format":" ",
-    "on-click": "~/.config/hypr/scripts/screenshot_full",
-    "on-click-right":"~/.config/hypr/scripts/screenshot_area"
-},
-"temperature": {
-    // "thermal-zone": 1,
-    "interval": 4,
-    //"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": "  {temperatureC}°C",
-    "format": "{icon}  {temperatureC}°C",
-    "format-icons": ["", "", ""],
-    "max-length": 7,
-    "min-length": 7,
-    "on-click": "xsensors"
-},
 
-"memory": {
-    "interval": 30,
-    //"format": "  {used:0.2f} / {total:0.0f} GB",
-    "format": "{used:0.2f} / {total:0.0f} GB",
-    "on-click": "ghostty --class=btop -e btop"
-},
-
-"battery": {
-    "interval": 2,
-    "states": {
-        "good": 95,
-        "warning": 30,
-        "critical": 15
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        //"format-connected": " {num_connections} connected",
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
     },
-    "format": "{icon}  {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        ""
-    ]
-},
-"network": {
-    "format-wifi": " ",
-    //"format-wifi": " {essid} ({signalStrength}%)",
-    //"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-    "format-ethernet": "",
-    "format-linked": "{ifname} (No IP) ",
-    "format": "",
-    "format-disconnected": "",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-    "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-    "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
-    "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
-    "interval": 10
-},
-"custom/storage": {
-    "format": " {}",
-    "format-alt": "{percentage}% ",
-    "format-alt-click": "click-right",
-    "return-type": "json",
-    "interval": 60,
-    "exec": "~/.config/waybar/modules/storage.sh"
-},
-
-"backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}  {percent}%",
-    "format-alt": "{percent}% {icon}",
-    "format-alt-click": "click-right",
-    "format-icons": ["", ""],
-    "on-scroll-down": "brightnessctl s 5%-",
-    "on-scroll-up": "brightnessctl s +5%"
-},
-"idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "",
-        "deactivated": ""
+    "custom/screenshot":{
+        "format":"",
+        "on-click": "~/.config/hypr/scripts/screenshot_full",
+        "on-click-right":"~/.config/hypr/scripts/screenshot_area"
     },
-    "tooltip": "true"
-},
-"custom/pacman": {
-    "format": "<big>􏆲</big>  {}",
-    "interval": 3600,                     // every hour
-    "exec": "checkupdates | wc -l",       // # of updates
-    "exec-if": "exit 0",                  // always run; consider advanced run conditions
-    "on-click": "ghostty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
-    "signal": 8,
-    "max-length": 5,
-    "min-length": 3
-},
-
-"custom/spotify": {
-    "exec": "~/.config/waybar/mediaplayer.py --player spotify",
-    "format": "{}  ",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
-},
-
-    "custom/media": {
-        "format": "{0} {1}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+    "memory": {
+        "interval": 30,
+        //"format": "  {used:0.2f} / {total:0.0f}GB",
+        "format": "{used:0.2f}GB",
+        "on-click": "ghostty --class=btop -e btop"
+    },
+    "battery": {
+        "interval": 2,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
         },
-        "escape": true,
-        //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
-        // "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
+    "network": {
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰀂",
+        "format-disconnected": "󰖪",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 3,
+        "spacing": 1,
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["", ""],
+        "on-scroll-down": "brightnessctl s 5%-",
+        "on-scroll-up": "brightnessctl s +5%"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": "true"
+    },
+    "custom/pacman": {
+        "format": "{}!",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "ghostty -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "max-length": 5,
+        "min-length": 3
+    },
     "custom/power": {
         "format": " 󰐥 ",
         "tooltip": false,
         "on-click": "wlogout"
     },
-
     "clock": {
         "format": "{:%H:%M  %b %e}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -199,15 +144,6 @@
       },
       "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep",
     },
-
-    "cpu": {
-        "interval": 1,
-        //"format": " {}%", // Icon: microchip
-        "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
-        "max-length": 13,
-        "min-length": 13
-    },
-
     "mpd": {
         "max-length": 25,
         "format": "<span foreground='#bb9af7'></span> {title}",
@@ -235,7 +171,7 @@
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
+        "format": "<span foreground='#ebbcba'>{icon}</span>  {volume}%",
         "format-muted": " ",
         "format-source": "",
         "format-source-muted": "",
@@ -248,8 +184,20 @@
             "default": [" ", " ", " "]
         },
     },
+    "group/tray-expander": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "tray-group-item"
+        },
+        "modules": ["custom/expand-icon",  "memory", "bluetooth", "tray"]
+    },
+    "custom/expand-icon": {
+        "format": " ",
+        "tooltip": false
+    },
     "tray": {
         "icon-size": 15,
-        "spacing": 3
+        "spacing": 5
     }
 }
