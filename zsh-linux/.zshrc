@@ -41,7 +41,6 @@ bindkey '^p' reverse-menu-complete
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init - zsh)"
 # eval "$(pyenv virtualenv-init - zsh)"
-echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc    
 
 # Fzf setup
 source <(fzf --zsh)

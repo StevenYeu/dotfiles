@@ -169,18 +169,13 @@
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        "format": "<span foreground='#ebbcba'>{icon}</span>  {volume}%",
-        "format-muted": " ",
-        "format-source": "",
-        "format-source-muted": "",
+        "format": "{icon}",        
+        "tooltip-format": "Volume {volume}%",
+        "scroll-step": 5,
+        "format-muted": "󰝟",
         "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "default": [" ", " ", " "]
-        },
+            "default": ["", "", ""]
+        } 
     },
     "group/tray-expander": {
         "orientation": "inherit",
