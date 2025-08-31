@@ -1,86 +1,43 @@
+@import "./theme.css";
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;  /* Slightly smaller font size */
-    font-weight: 900;
-    margin: 0;
-    padding: 0;
+    font-family: CaskaydiaMono Nerd Font;
+    background-color: @background;
+    font-size: 18px;
     transition-property: background-color;
     transition-duration: 0.5s;
-}
-
-/* Reset all styles */
-* {
     border: none;
-    border-radius: 3px;
+    border-radius: 0px;
     min-height: 0;
-    margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
-/* The whole bar */
 #waybar {
-    background-color: transparent;
-    color: #ffffff;
+    /* background-color: transparent; */
     transition-property: background-color;
     transition-duration: 0.5s;
-    border-radius: 0px;
-    margin: 0px 0px;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+.modules-left {
+  margin-left: 8px;
 }
 
-#workspaces button {
-    padding: 3px 5px;  /* Adjusted padding to reduce height */
-    margin: 3px 5px;    /* Reduced margin slightly */
-    border-radius: 6px;
-    color: @foreground;
-    background-color: #111827;
-    transition: all 0.3s ease-in-out;
-    font-size: 13px;  /* Slightly smaller font size */
-}
-
-#workspaces button.active {
-    /* color: @foreground; */
-    color: #ebbcba;
-    background: #26233a;
-}
-
-#workspaces button:hover {
-    background: #333333;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+.modules-right {
+  margin-right: 8px;
 }
 
 #workspaces {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 3px 6px;  /* Adjusted padding to reduce height */
+    background-color: @background;
 }
 
-#window {
-    background-color: #111827;
-    font-size: 15px;   /* Slightly smaller font size */
-    font-weight: 800;
-    color: @foreground;
-    border-radius: 14px;
-    padding: 3px 6px;  /* Reduced padding */
-    margin: 2px;
-    opacity: 1;
+.hidden {
+  opacity: 0;
 }
 
-#memory {
-    color: #ebbcba;
+#clock {
+  margin-left: 11px;
 }
 
-#wireplumber {
-    color:#ebbcba;
-
-}
-
+#workspaces button.active,
 #clock,
 #battery,
 #memory,
@@ -92,93 +49,28 @@ window#waybar.hidden {
 #idle_inhibitor,
 #mpd,
 #bluetooth,
-#custom-hyprPicker,
 #custom-power-menu,
+#custom-screenshot,
+#custom-power,
+#tray-expander,
+#battery.full,
+#battery.plugged, 
 #custom-spotify {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;  /* Adjusted padding */
-}
-
-#custom-screenshot {
-    background-color: #111827;
-    color: #ebbcba;;
-    border-radius: 7px;
-    padding: 3px;
-}
-
-#custom-spotify {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 3px 12px;
-}
-
-#tray-expander {
-    background-color: #111827;
-    color: #ebbcba;
-    border-radius: 14px;
-    padding: 6px;  /* Adjusted padding */
-}
-
-#memory {
-    color: #ebbcba;
-    background-color: #111827;
-    padding: 6px;
-}
-
-#custom-power {
-    color: #ebbcba;
-    background-color: #111827;
+    color: @foreground;
+    min-width: 15px;
+    margin: 0 10px;
 }
 
 #custom-pacman {
-    color:#eb6f92;
+    color:@error;
 }
 
-#custom-launcher {
-    background-color: #1b242b;
-    color: #6a92d7;
-    border-radius: 7.5px;
-    padding: 3px 6px;  /* Adjusted padding */
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#backlight {
-    color: #ebbcba;
-}
-
-#clock {
-    color: #ebbcba
-}
-
-#battery {
-    color: #ebbcba;
-}
-
-#battery.charging,
-#battery.full,
-#battery.plugged {
-    color: #9ccfd8;
-}
-
-@keyframes blink {
-    to {
-        background-color: rgba(30, 34, 42, 0.5);
-        color: #abb2bf;
-    }
+#battery.charging{
+    color: @info;
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: @error;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -186,54 +78,18 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
-}
-#bluetooth {
-    color: #6e6a86;
-}
-
-#bluetooth.disconnected {
-    color: #f53c3c;
-}
-
-#network {
-    color: #ebbcba;
-}
-
 #network.disconnected {
-    color: #f53c3c;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+    color: @error;
 }
 
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
-
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @error;
 }
 
-#idle_inhibitor {
-    background-color: #2d3436;
+tooltip {
+  padding: 2px;
 }
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
