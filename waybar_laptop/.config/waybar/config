@@ -5,11 +5,8 @@
 
     "layer": "top",
     "position": "top",
-    "margin-left": 10,
-    "margin-right": 10,
-
-    "spacing": 3, // Gaps between modules
-
+    "spacing": 0,
+    "height": 26,
     "modules-left": [
         "hyprland/workspaces",
     ],
@@ -17,7 +14,7 @@
         "clock"
     ],
     "modules-right": [
-        "custom/pacman",
+        //"custom/pacman",
         "custom/screenshot",
         "backlight",
         "battery",
