@@ -1,7 +1,7 @@
 shell-integration = zsh
 theme = rose-pine
-font-family = "GeistMono NFM"
-font-size = 18
+font-family = " CaskaydiaMono Nerd Font"
+font-size = 14
 background-opacity = 0.5
 window-padding-x = 20
 window-padding-y = 20
