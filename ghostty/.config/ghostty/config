@@ -7,6 +7,7 @@ background-opacity = 0.8
 background-blur-radius = 5
 quick-terminal-autohide = false 
 quick-terminal-position = center
+quick-terminal-size = 75%,75%
 window-padding-x = 20
 window-padding-y = 20
 keybind = global:alt+d=toggle_quick_terminal
