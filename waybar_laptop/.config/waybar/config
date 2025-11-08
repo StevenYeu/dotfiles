@@ -9,6 +9,7 @@
     "height": 26,
     "modules-left": [
         "hyprland/workspaces",
+        "hyprland/submap"
     ],
     "modules-center": [
         "clock"
@@ -163,6 +164,11 @@
     "hyprland/window": {
         "max-length": 100,
         "separate-outputs": true
+    },
+    "hyprland/submap": {
+        "format": ":{}",
+        "max-length": 8,
+        "tooltip": false
     },
     "wireplumber": {
         "on-click": "pavucontrol",
