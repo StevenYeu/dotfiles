@@ -110,3 +110,6 @@ eval "$(uv generate-shell-completion zsh)"
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup
+

@@ -6,7 +6,7 @@
 }
 {
     "label" : "logout",
-    "action" : "sh $HOME/.config/wlogout/logout.sh",
+    action" : "hyprctl dispatch exit",
     "text" : "Logout",
     "keybind" : "e"
 }
