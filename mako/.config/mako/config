@@ -1,10 +1,13 @@
-max-visible=10
-layer=top
-background-color=#4c566add
-text-color=#d8dee9
-border-color=#434c5e
-border-radius=7
-max-icon-size=48
-default-timeout=10000
+text-color=#e0def4
+border-color=#524f67
+background-color=#26233a
+progress-color=over #31748f
+height=110
+padding=10
+border-size=2
 anchor=top-right
-margin=20
+default-timeout=5000
+max-icon-size=32
+
+[urgency=high]
+border-color=#eb6f92
