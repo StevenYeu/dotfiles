@@ -51,12 +51,6 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 5
 
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "always", the focused column will always be centered.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.
     center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
@@ -64,7 +58,6 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.33333
         proportion 0.5
         proportion 0.66667
 
@@ -72,26 +65,8 @@ layout {
         // fixed 1920
     }
 
-    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
 
-    // You can change the default width of the new windows.
     default-column-width { proportion 0.5; }
-    // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
-
-    // By default focus ring and border are rendered as a solid background rectangle
-    // behind windows. That is, they will show up through semitransparent windows.
-    // This is because windows using client-side decorations can have an arbitrary shape.
-    //
-    // If you don't like that, you should uncomment `prefer-no-csd` below.
-    // Niri will draw focus ring and border *around* windows that agree to omit their
-    // client-side decorations.
-    //
-    // Alternatively, you can override it with a window rule called
-    // `draw-border-with-background`.
-
-    // You can change how the focus ring looks.
     focus-ring {
         off
     }
@@ -115,7 +90,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -164,13 +139,12 @@ layout {
 
 // STARTUP
 
-spawn-at-startup "solaar -w hide"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
 spawn-at-startup "systemctl --user import-environment &"
 spawn-at-startup "hash dbus-update-activation-environment 2>/dev/null &"
 spawn-at-startup "dbus-update-activation-environment --systemd &"
-spawn-at-startup "swayidle -w timeout 300 'qs -c noctalia-shell ipc call lockScreen lock' timeout 600 'niri msg action power-off-monitors' &"
+// spawn-at-startup "swayidle -w timeout 300 'qs -c noctalia-shell ipc call lockScreen lock' timeout 600 'niri msg action power-off-monitors' &"
 
 hotkey-overlay {
     skip-at-startup
@@ -215,25 +189,46 @@ workspace "games"
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    match app-id=r#"zen|chromium"#
+    open-on-workspace "web"
+}
+window-rule {
+    match app-id="nemo"
+    open-on-workspace "files"
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
+    match app-id="Postman"
+    open-on-workspace "ide"
+}
+window-rule {
+    match app-id="cafe.avery.Delfin"
+    open-on-workspace "media"
+}
+
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "notes"
+}
+
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "notes"
+}
+
+window-rule {
+    match app-id=r#"1password|via-nativia"#
+    open-on-workspace "other"
+}
+
+window-rule {
+    match app-id="zoom"
+    open-on-workspace "social"
 }
 
 window-rule {
   // Rounded corners for a modern look.
-  geometry-corner-radius 20
+  geometry-corner-radius 16
 
   // Clips window contents to the rounded corner boundaries.
   clip-to-geometry true
@@ -276,9 +271,6 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--device=intel_backlight" "set" "+5%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--device=intel_backlight" "set" "5%-"; }
 
@@ -303,7 +295,7 @@ binds {
     Mod+S { focus-workspace "media"; }
     Mod+N { focus-workspace "notes"; }
     Mod+X { focus-workspace "ide"; }
-    Mod+Z { focus-workspace "sociall"; }
+    Mod+Z { focus-workspace "social"; }
     Mod+G { focus-workspace "games"; }
     Mod+F { focus-workspace "files"; }
     Mod+Ctrl+A { move-column-to-workspace "web"; }
@@ -315,10 +307,6 @@ binds {
     Mod+Ctrl+Z { move-column-to-workspace "social"; }
     Mod+Ctrl+G { move-column-to-workspace "games"; }
     Mod+Ctrl+F { move-column-to-workspace "files"; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+1 { move-window-to-workspace 1; }
-
 
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
@@ -348,19 +336,10 @@ binds {
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
 
-    // Finer width adjustments.
-    // This command can also:
-    // * set width in pixels: "1000"
-    // * adjust width in pixels: "-5" or "+5"
-    // * set width as a percentage of screen width: "25%"
-    // * adjust width as a percentage of screen width: "-10%" or "+10%"
-    // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
-    // set-column-width "100" will make the column occupy 200 physical screen pixels.
-    Mod+Ctrl+Shift+J { set-column-width "-10%"; }
+    Mod+Ctrl+Shift+H { set-column-width "-10%"; }
     Mod+Ctrl+Shift+L { set-column-width "+10%"; }
-    // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Ctrl+Shift+J { set-window-height "-10%"; }
+    Mod+Ctrl+Shift+k { set-window-height "+10%"; }
 
 
     // Move the focused window between the floating and the tiling layout.
@@ -373,20 +352,9 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
 
 
-    // Applications such as remote-desktop clients and software KVM switches may
-    // request that niri stops processing the keyboard shortcuts defined here
-    // so they may, for example, forward the key presses as-is to a remote machine.
-    // It's a good idea to bind an escape hatch to toggle the inhibitor,
-    // so a buggy application can't hold your session hostage.
-    //
-    // The allow-inhibiting=false property can be applied to other binds as well,
-    // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Ctrl+Alt+Delete { quit; }
 
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    // Mod+Shift+P { power-off-monitors; }
 }
