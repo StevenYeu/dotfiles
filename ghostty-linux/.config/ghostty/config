@@ -7,3 +7,7 @@ window-padding-x = 20
 window-padding-y = 20
 cursor-style-blink = false
 shell-integration-features = no-cursor
+keybind = global:super+p=toggle_quick_terminal
+gtk-quick-terminal-layer=overlay
+quick-terminal-size=80%,80%
+quick-terminal-position=center
