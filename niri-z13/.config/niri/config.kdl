@@ -1,0 +1,248 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://yalter.github.io/niri/Configuration:-Introduction
+
+// Input device configuration.
+// Find the full list of options on the wiki:
+// https://yalter.github.io/niri/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            options "ctrl:nocaps"
+        }
+        repeat-delay 600
+        repeat-rate 35
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        scroll-method "two-finger"
+        // disabled-on-external-mouse
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="10%"
+
+}
+
+output "eDP-2" {
+    scale 1.5
+    variable-refresh-rate on-demand=true
+    focus-at-startup
+}
+
+layout {
+    gaps 10
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        off
+    }
+    border {
+        width 4
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+        active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
+
+        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    // You can enable drop shadows for windows.
+    shadow {
+        on
+        draw-behind-window true
+        softness 30
+        // spread 5
+        // color "#0007"
+    }
+
+}
+
+// STARTUP
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
+spawn-at-startup "systemctl --user import-environment &"
+spawn-at-startup "hash dbus-update-activation-environment 2>/dev/null &"
+spawn-at-startup "dbus-update-activation-environment --systemd &"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+    workspace-switch {
+        off
+    }
+}
+
+// WORKSPACES
+workspace "web"
+workspace "term"
+workspace "ide"
+workspace "notes"
+workspace "files"
+workspace "social"
+workspace "media"
+workspace "other"
+workspace "games"
+
+window-rule {
+    match app-id=r#"zen|chromium"#
+    open-on-workspace "web"
+}
+window-rule {
+    match app-id="nemo"
+    open-on-workspace "files"
+}
+window-rule {
+    match app-id="Postman"
+    open-on-workspace "ide"
+}
+window-rule {
+    match app-id="cafe.avery.Delfin"
+    open-on-workspace "media"
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "notes"
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "notes"
+}
+window-rule {
+    match app-id=r#"1password|via-nativia"#
+    open-on-workspace "other"
+}
+window-rule {
+    match app-id="zoom"
+    open-on-workspace "social"
+}
+window-rule {
+  geometry-corner-radius 16
+  clip-to-geometry true
+}
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id="1password"
+    block-out-from "screen-capture"
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Space hotkey-overlay-title="Run an Application: Noctalis Shell" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";  }
+    Mod+E hotkey-overlay-title="Open Fille Manager: nemo" { spawn "nemo"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";}
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--device=intel_backlight" "set" "+5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--device=intel_backlight" "set" "5%-"; }
+
+    Mod+Shift+O repeat=false { toggle-overview; }
+    Mod+Ctrl+Q repeat=false { close-window; }
+
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+J     { move-window-down; }
+    Mod+Shift+K     { move-window-up; }
+    Mod+Shift+L     { move-column-right; }
+
+
+    // Keybinds Workspaces
+    Mod+A { focus-workspace "web"; }
+    Mod+O { focus-workspace "other"; }
+    Mod+T { focus-workspace "term"; }
+    Mod+S { focus-workspace "media"; }
+    Mod+N { focus-workspace "notes"; }
+    Mod+X { focus-workspace "ide"; }
+    Mod+Z { focus-workspace "social"; }
+    Mod+G { focus-workspace "games"; }
+    Mod+F { focus-workspace "files"; }
+    Mod+Ctrl+A { move-column-to-workspace "web"; }
+    Mod+Ctrl+O { move-column-to-workspace "other"; }
+    Mod+Ctrl+T { move-column-to-workspace "term"; }
+    Mod+Ctrl+S { move-column-to-workspace "media"; }
+    Mod+Ctrl+N { move-column-to-workspace "notes"; }
+    Mod+Ctrl+X { move-column-to-workspace "ide"; }
+    Mod+Ctrl+Z { move-column-to-workspace "social"; }
+    Mod+Ctrl+G { move-column-to-workspace "games"; }
+    Mod+Ctrl+F { move-column-to-workspace "files"; }
+
+    // The following binds move the focused window in and out of a column.
+    // If the window is alone, they will consume it into the nearby column to the side.
+    // If the window is already in a column, they will expel it out.
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma  { consume-window-into-column; }
+    // Expel the bottom window from the focused column to the right.
+    Mod+Period { expel-window-from-column; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+
+    Mod+M { maximize-column; }
+    Mod+Shift+M { fullscreen-window; }
+    Mod+Ctrl+M { expand-column-to-available-width; }
+
+    // Center all fully visible columns on screen.
+    // Mod+Ctrl+C { center-visible-columns; }
+    // Mod+C { center-column; }
+
+    Mod+Ctrl+Shift+H { set-column-width "-10%"; }
+    Mod+Ctrl+Shift+L { set-column-width "+10%"; }
+    Mod+Ctrl+Shift+J { set-window-height "-10%"; }
+    Mod+Ctrl+Shift+k { set-window-height "+10%"; }
+
+
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // Toggle tabbed column display mode.
+    // Windows in this column will appear as vertical tabs,
+    // rather than stacked on top of each other.
+    // Mod+W { toggle-column-tabbed-display; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    // The quit action will show a confirmation dialog to avoid accidental exits.
+    Ctrl+Alt+Delete { quit; }
+
+}
