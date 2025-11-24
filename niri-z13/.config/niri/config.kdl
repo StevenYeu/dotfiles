@@ -72,7 +72,7 @@ layout {
 }
 
 // STARTUP
-spawn-at-startup "qs" "-c" "noctalia-shell"
+// spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
 spawn-at-startup "systemctl --user import-environment &"
 spawn-at-startup "hash dbus-update-activation-environment 2>/dev/null &"
