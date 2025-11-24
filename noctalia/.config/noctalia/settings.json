@@ -24,7 +24,7 @@
         "volumeStep": 5
     },
     "bar": {
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.8,
         "capsuleOpacity": 1,
         "density": "comfortable",
         "exclusive": true,
@@ -278,7 +278,7 @@
         "videoSource": "portal"
     },
     "sessionMenu": {
-        "countdownDuration": 10000,
+        "countdownDuration": 5000,
         "enableCountdown": true,
         "position": "center",
         "powerOptions": [
