@@ -24,7 +24,7 @@ input {
 
 }
 
-output "eDP-1" {
+output "DP-3" {
     scale 1
     variable-refresh-rate on-demand=true
     focus-at-startup
@@ -127,6 +127,10 @@ window-rule {
     open-on-workspace "social"
 }
 window-rule {
+    match app-id="steam"
+    open-on-workspace "games"
+}
+window-rule {
   geometry-corner-radius 16
   clip-to-geometry true
 }
@@ -152,6 +156,8 @@ binds {
     Mod+Space hotkey-overlay-title="Run an Application: Noctalis Shell" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";  }
     Mod+E hotkey-overlay-title="Open Fille Manager: nemo" { spawn "nemo"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";}
+    Mod+Alt+C hotkey-overlay-title="Clipboard History" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";}
+    Super+Alt+S hotkey-overlay-title="Session Manager" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
