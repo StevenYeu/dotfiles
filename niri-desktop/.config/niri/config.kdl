@@ -68,6 +68,7 @@ spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "systemctl --user import-environment &"
 spawn-at-startup "hash dbus-update-activation-environment 2>/dev/null &"
 spawn-at-startup "dbus-update-activation-environment --systemd &"
+spawn-sh-at-startup "ghostty -e zsh -c 'source ~/.zshrc; ~/.config/niri/scripts/main_term.sh'"
 
 hotkey-overlay {
     skip-at-startup
@@ -242,4 +243,8 @@ binds {
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Ctrl+Alt+Delete { quit; }
 
+}
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
