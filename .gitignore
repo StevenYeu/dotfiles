@@ -1,2 +1,3 @@
 .DS_Store
 scripts/.local/bin/python*
+systemd/.config/systemd/user/niri.service.wants/*
