@@ -72,8 +72,7 @@ layout {
 }
 
 // STARTUP
-// spawn-at-startup "qs" "-c" "noctalia-shell"
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "systemctl --user import-environment &"
 spawn-at-startup "hash dbus-update-activation-environment 2>/dev/null &"
 spawn-at-startup "dbus-update-activation-environment --systemd &"
@@ -136,6 +135,10 @@ window-rule {
     open-on-workspace "social"
 }
 window-rule {
+    match app-id="steam"
+    open-on-workspace "games"
+}
+window-rule {
   geometry-corner-radius 16
   clip-to-geometry true
 }
@@ -167,8 +170,8 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--device=intel_backlight" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--device=intel_backlight" "set" "5%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--device=amdgpu_bl1" "set" "+5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--device=amdgpu_bl1" "set" "5%-"; }
 
     Mod+Shift+O repeat=false { toggle-overview; }
     Mod+Ctrl+Q repeat=false { close-window; }
