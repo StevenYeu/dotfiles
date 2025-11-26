@@ -83,7 +83,7 @@ hotkey-overlay {
 
 prefer-no-csd
 
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot-%Y-%m-%d %H-%M-%S.png"
 
 animations {
     workspace-switch {
@@ -166,9 +166,10 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";}
     Mod+Alt+C hotkey-overlay-title="Clipboard History" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";}
     Super+Alt+S hotkey-overlay-title="Session Manager" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
+    Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {screenshot;}
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
