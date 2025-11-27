@@ -38,6 +38,7 @@ output "eDP-1" {
     position x=0 y=0
     focus-at-startup
 }
+// places monitor on top of built-in screen
 output "DP-4" {
     position x=-751 y=-1440
 }
