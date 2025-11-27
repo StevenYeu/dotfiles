@@ -35,7 +35,11 @@ input {
 output "eDP-1" {
     scale 1.75
     variable-refresh-rate on-demand=true
+    position x=0 y=0
     focus-at-startup
+}
+output "DP-4" {
+    position x=-751 y=-1440
 }
 
 layout {
@@ -101,6 +105,10 @@ workspace "social"
 workspace "media"
 workspace "other"
 workspace "games"
+
+workspace "sec" {
+    open-on-output "DP-4"
+}
 
 window-rule {
     match app-id=r#"zen|chromium"#
@@ -200,6 +208,7 @@ binds {
     Mod+Z { focus-workspace "social"; }
     Mod+G { focus-workspace "games"; }
     Mod+F { focus-workspace "files"; }
+    Mod+1 { focus-workspace "sec"; }
     Mod+Ctrl+A { move-column-to-workspace "web"; }
     Mod+Ctrl+O { move-column-to-workspace "other"; }
     Mod+Ctrl+T { move-column-to-workspace "term"; }
@@ -209,6 +218,10 @@ binds {
     Mod+Ctrl+Z { move-column-to-workspace "social"; }
     Mod+Ctrl+G { move-column-to-workspace "games"; }
     Mod+Ctrl+F { move-column-to-workspace "files"; }
+    Mod+Ctrl+1 { move-column-to-workspace "sec"; }
+    
+    Mod+Shift+Period {move-workspace-to-monitor-next;}
+    Mod+Shift+Comma {move-workspace-to-monitor-previous;}
 
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
