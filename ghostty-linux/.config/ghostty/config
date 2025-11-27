@@ -1,5 +1,4 @@
 shell-integration = zsh
-theme = Rose Pine
 font-family = "CaskaydiaMono Nerd Font Mono"
 font-size = 16
 background-opacity = 0.80
@@ -10,3 +9,4 @@ shell-integration-features = no-cursor
 gtk-quick-terminal-layer=top
 quick-terminal-size=80%,80%
 quick-terminal-position=center
+theme = noctalia
