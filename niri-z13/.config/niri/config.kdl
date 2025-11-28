@@ -33,7 +33,7 @@ input {
 }
 
 output "eDP-1" {
-    scale 1.75
+    scale 2
     variable-refresh-rate on-demand=true
     position x=0 y=0
     focus-at-startup
@@ -47,6 +47,7 @@ layout {
     gaps 10
     center-focused-column "never"
     preset-column-widths {
+        proportion 0.33333
         proportion 0.5
         proportion 0.66667
     }
@@ -56,22 +57,16 @@ layout {
     }
     border {
         width 4
-        // active-color "#ffc87f"
-        // inactive-color "#505050"
-        // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-        active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
+        inactive-color "#9893a5"
+        urgent-color "#b4637a"
+        active-gradient from="#907aa9" to="#d7827e" angle=0 in="oklch longer hue"
 
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
-    // You can enable drop shadows for windows.
     shadow {
         on
         draw-behind-window true
         softness 30
-        // spread 5
-        // color "#0007"
     }
 
 }
