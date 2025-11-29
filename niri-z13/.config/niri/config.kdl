@@ -39,7 +39,7 @@ output "eDP-1" {
     focus-at-startup
 }
 // places monitor on top of built-in screen
-output "DP-4" {
+output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
     position x=-751 y=-1440
 }
 
@@ -103,7 +103,7 @@ workspace "other"
 workspace "games"
 
 workspace "sec" {
-    open-on-output "DP-4"
+    open-on-output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550"
 }
 
 window-rule {
