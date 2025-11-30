@@ -1,0 +1,18 @@
+output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
+  scale 1
+  alias $DESK
+}
+
+output eDP-1 {
+  scale 1.75
+  alias $INTERNAL
+}
+
+profile home {
+  output $INTERNAL disable
+  output $DESK enable
+}
+
+profile laptop {
+  output $INTERNAL enable 
+}
