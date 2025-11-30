@@ -44,6 +44,7 @@ output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
 }
 
 layout {
+    background-color "transparent"
     gaps 10
     center-focused-column "never"
     preset-column-widths {
@@ -70,7 +71,16 @@ layout {
     }
 
 }
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
 
+overview {
+  workspace-shadow {
+    off
+  }
+}
 // STARTUP
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "systemctl --user import-environment &"
@@ -85,15 +95,15 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot-%Y-%m-%d %H-%M-%S.png"
 
-animations {
-    workspace-switch {
-        off
-    }
-}
+// animations {
+//     workspace-switch {
+//         off
+//     }
+// }
 
 // WORKSPACES
-workspace "web"
 workspace "term"
+workspace "web"
 workspace "ide"
 workspace "notes"
 workspace "files"
@@ -152,8 +162,6 @@ debug {
 }
 
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id="1password"
     block-out-from "screen-capture"
     // Use this instead if you want them visible on third-party screenshot tools.
