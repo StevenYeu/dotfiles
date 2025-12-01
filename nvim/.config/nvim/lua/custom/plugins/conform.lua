@@ -33,7 +33,8 @@ return {
             typescriptreact = { "prettierd" },
             templ = { "templ" },
             c = { "clang-format" },
-            cpp = { "clang-format" }
+            cpp = { "clang-format" },
+            kdl = { "kdlfmt" }
         },
         formatters = {
             shfmt = {
