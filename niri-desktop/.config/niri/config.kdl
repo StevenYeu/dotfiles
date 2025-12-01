@@ -21,6 +21,7 @@ input {
 
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="10%"
+    workspace-auto-back-and-forth
 
 }
 
@@ -31,9 +32,11 @@ output "DP-3" {
 }
 
 layout {
+    background-color "transparent"
     gaps 10
     center-focused-column "never"
     preset-column-widths {
+        proportion 0.33333
         proportion 0.5
         proportion 0.66667
     }
@@ -43,13 +46,9 @@ layout {
     }
     border {
         width 4
-        // active-color "#ffc87f"
-        // inactive-color "#505050"
-        // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-        active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
-
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        inactive-color "#9893a5"
+        urgent-color "#b4637a"
+        active-gradient from="#907aa9" to="#d7827e" angle=0 in="oklch longer hue"
     }
 
     // You can enable drop shadows for windows.
@@ -57,17 +56,23 @@ layout {
         on
         draw-behind-window true
         softness 30
-        // spread 5
-        // color "#0007"
     }
 
 }
 
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
+
+overview {
+  workspace-shadow {
+    off
+  }
+}
+
 // STARTUP
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-at-startup "systemctl --user import-environment &"
-spawn-at-startup "hash dbus-update-activation-environment 2>/dev/null &"
-spawn-at-startup "dbus-update-activation-environment --systemd &"
 spawn-sh-at-startup "ghostty -e zsh -c 'source ~/.zshrc; ~/.config/niri/scripts/main_term.sh'"
 
 hotkey-overlay {
@@ -78,11 +83,6 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot_ %Y-%m-%d %H-%M-%S.png"
 
-animations {
-    workspace-switch {
-        off
-    }
-}
 
 // WORKSPACES
 workspace "term"
@@ -141,8 +141,6 @@ debug {
 }
 
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id="1password"
     block-out-from "screen-capture"
     // Use this instead if you want them visible on third-party screenshot tools.
@@ -248,4 +246,5 @@ binds {
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORMTHEME "qt6ct"
 }
