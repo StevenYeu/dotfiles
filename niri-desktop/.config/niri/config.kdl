@@ -20,7 +20,7 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
     workspace-auto-back-and-forth
 }
-output "DP-3" {
+output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
     scale 1
     variable-refresh-rate on-demand=true
     focus-at-startup
@@ -73,13 +73,12 @@ screenshot-path "~/Pictures/Screenshots/Screenshot_ %Y-%m-%d %H-%M-%S.png"
 // WORKSPACES
 workspace "term"
 workspace "web"
-workspace "ide"
-workspace "notes"
 workspace "files"
-workspace "social"
 workspace "media"
-workspace "other"
 workspace "games"
+workspace "misc"
+workspace "social"
+workspace "ide"
 window-rule {
     match app-id="zen|chromium"
     open-on-workspace "web"
@@ -93,23 +92,27 @@ window-rule {
     open-on-workspace "ide"
 }
 window-rule {
+    match app-id="jetbrains-datagrip"
+    open-on-workspace "ide"
+}
+window-rule {
     match app-id="cafe.avery.Delfin"
     open-on-workspace "media"
 }
 window-rule {
     match app-id="obsidian"
-    open-on-workspace "notes"
-}
-window-rule {
-    match app-id="obsidian"
-    open-on-workspace "notes"
+    open-on-workspace "misc"
 }
 window-rule {
     match app-id="1password|via-nativia"
-    open-on-workspace "other"
+    open-on-workspace "misc"
 }
 window-rule {
     match app-id="zoom"
+    open-on-workspace "social"
+}
+window-rule {
+    match app-id="discord"
     open-on-workspace "social"
 }
 window-rule {
@@ -129,6 +132,12 @@ window-rule {
     block-out-from "screen-capture"
  // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
+}
+animations {
+    workspace-switch {
+        // spring damping-ratio=0.7 stiffness=500 epsilon=0.00001
+        off
+    }
 }
 binds {
     Mod+Shift+Slash {
@@ -208,7 +217,7 @@ binds {
         focus-workspace "web"
     }
     Mod+O {
-        focus-workspace "other"
+        focus-workspace "misc"
     }
     Mod+T {
         focus-workspace "term"
@@ -235,7 +244,7 @@ binds {
         move-column-to-workspace "web"
     }
     Mod+Ctrl+O {
-        move-column-to-workspace "other"
+        move-column-to-workspace "misc"
     }
     Mod+Ctrl+T {
         move-column-to-workspace "term"
