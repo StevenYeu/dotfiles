@@ -1,8 +1,3 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-// Check the wiki for a full description of the configuration:
-// https://yalter.github.io/niri/Configuration:-Introduction
-// Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
 input {
@@ -46,11 +41,15 @@ layout {
         urgent-color "#b4637a"
         active-gradient from="#907aa9" to="#d7827e" angle=0 in="oklch longer hue"
     }
-    // You can enable drop shadows for windows.
     shadow {
         on
         draw-behind-window true
         softness 30
+    }
+}
+gestures {
+    hot-corners {
+        off
     }
 }
 layer-rule {
@@ -335,7 +334,7 @@ binds {
     }
 }
 environment {
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
