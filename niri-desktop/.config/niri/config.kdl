@@ -145,11 +145,12 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" {
         spawn "ghostty"
     }
-    Mod+Space hotkey-overlay-title="Run an Application: Noctalis Shell" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
-    }
     Mod+E hotkey-overlay-title="Open Fille Manager: Nemo" {
         spawn "nemo"
+    }
+    // Noctalia Binds
+    Mod+Space hotkey-overlay-title="Run an Application: Noctalis Shell" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
@@ -159,6 +160,18 @@ binds {
     }
     Super+Alt+S hotkey-overlay-title="Session Manager" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+    }
+    Super+Alt+T hotkey-overlay-title="Toggle Control Center" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
+    }
+    Super+Alt+W hotkey-overlay-title="Toggle Wallpaper Selector" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"
+    }
+    Super+Alt+Y hotkey-overlay-title="Toggle Noctalia Setting" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"
+    }
+    Super+Alt+P hotkey-overlay-title="Toggle Noctalia Setting" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerProfile" "cycle"
     }
     Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {
         screenshot
