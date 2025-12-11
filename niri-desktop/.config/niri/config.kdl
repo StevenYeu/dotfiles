@@ -79,8 +79,13 @@ workspace "misc"
 workspace "social"
 workspace "ide"
 window-rule {
+    match app-id="com.mitchellh.ghostty"
+    open-maximized true
+}
+window-rule {
     match app-id="zen|chromium"
     open-on-workspace "web"
+    open-maximized true
 }
 window-rule {
     match app-id="nemo"
@@ -89,14 +94,17 @@ window-rule {
 window-rule {
     match app-id="Postman"
     open-on-workspace "ide"
+    open-maximized true
 }
 window-rule {
     match app-id="jetbrains-datagrip"
     open-on-workspace "ide"
+    open-maximized true
 }
 window-rule {
     match app-id="cafe.avery.Delfin"
     open-on-workspace "media"
+    open-maximized true
 }
 window-rule {
     match app-id="obsidian"
@@ -125,6 +133,7 @@ window-rule {
 debug {
     // Allows notification actions and window activation from Noctalia.
     honor-xdg-activation-with-invalid-serial
+    deactivate-unfocused-windows
 }
 window-rule {
     match app-id="1password"
