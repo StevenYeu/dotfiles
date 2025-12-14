@@ -158,11 +158,8 @@ binds {
         spawn "nemo"
     }
     // Noctalia Binds
-    Mod+Space hotkey-overlay-title="Run an Application: Noctalis Shell" {
+    Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
-    }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
     }
     Mod+Alt+C hotkey-overlay-title="Clipboard History" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
@@ -179,11 +176,14 @@ binds {
     Super+Alt+Y hotkey-overlay-title="Toggle Noctalia Setting" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"
     }
-    Super+Alt+P hotkey-overlay-title="Toggle Noctalia Setting" {
+    Super+Alt+P hotkey-overlay-title="Cycle Power Profiles" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerProfile" "cycle"
     }
     Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {
         screenshot
+    }
+    Super+Shift+Alt+S hotkey-overlay-title="Screen Recorder" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
     }
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"
@@ -314,28 +314,28 @@ binds {
     Mod+Ctrl+R {
         reset-window-height
     }
-    Mod+M {
+    Mod+M hotkey-overlay-title="Maximize Column" {
         maximize-column
     }
-    Mod+Shift+M {
+    Mod+Shift+M hotkey-overlay-title="Fullscreen" {
         fullscreen-window
     }
-    Mod+Ctrl+M {
+    Mod+Ctrl+M hotkey-overlay-title="Expand Column to available width" {
         expand-column-to-available-width
     }
     // Center all fully visible columns on screen.
-    // Mod+Ctrl+C { center-visible-columns; }
+    // Mod+Ctrl+Shift+C { center-visible-columns; }
     // Mod+C { center-column; }
-    Mod+Ctrl+Shift+H {
+    Mod+Ctrl+Shift+H hotkey-overlay-title="Resize Window Left" {
         set-column-width "-10%"
     }
-    Mod+Ctrl+Shift+L {
+    Mod+Ctrl+Shift+L hotkey-overlay-title="Resize Window Right" {
         set-column-width "+10%"
     }
-    Mod+Ctrl+Shift+J {
+    Mod+Ctrl+Shift+J hotkey-overlay-title="Resixe Window Down" {
         set-window-height "-10%"
     }
-    Mod+Ctrl+Shift+k {
+    Mod+Ctrl+Shift+K hotkey-overlay-title="Resize Window Up" {
         set-window-height "+10%"
     }
     Mod+V {
