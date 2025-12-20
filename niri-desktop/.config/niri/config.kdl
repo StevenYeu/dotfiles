@@ -15,10 +15,15 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
     workspace-auto-back-and-forth
 }
-output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
+// output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
+//     scale 1
+//     variable-refresh-rate on-demand=true
+//     focus-at-startup
+// }
+output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
     scale 1
-    variable-refresh-rate on-demand=true
     focus-at-startup
+    mode "2560x1440@279.961"
 }
 layout {
     background-color "transparent"
@@ -198,10 +203,10 @@ binds {
         spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     }
     XF86MonBrightnessUp allow-when-locked=true {
-        spawn "brightnessctl" "--device=intel_backlight" "set" "+5%"
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase" 
     }
     XF86MonBrightnessDown allow-when-locked=true {
-        spawn "brightnessctl" "--device=intel_backlight" "set" "5%-"
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease" 
     }
     Mod+Shift+O repeat=false {
         toggle-overview
