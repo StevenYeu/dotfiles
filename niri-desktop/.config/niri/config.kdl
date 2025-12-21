@@ -15,14 +15,10 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
     workspace-auto-back-and-forth
 }
-// output "LG Electronics LG ULTRAGEAR+ 302NTRL4D550" {
-//     scale 1
-//     variable-refresh-rate on-demand=true
-//     focus-at-startup
-// }
 output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
     scale 1
     focus-at-startup
+    variable-refresh-rate on-demand=true
     mode "2560x1440@279.961"
 }
 layout {
