@@ -1,0 +1,363 @@
+// Find the full list of options on the wiki:
+// https://yalter.github.io/niri/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            options "ctrl:nocaps"
+        }
+        repeat-delay 600
+        repeat-rate 35
+    }
+    mouse {
+        accel-profile "flat"
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="10%"
+    workspace-auto-back-and-forth
+}
+// output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
+//     scale 1
+//     focus-at-startup
+//     variable-refresh-rate on-demand=true
+//     mode "2560x1440@279.961"
+// }
+layout {
+    background-color "transparent"
+    gaps 10
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width {
+        proportion 0.5
+    }
+    focus-ring {
+        off
+    }
+    border {
+        width 4
+        inactive-color "#9893a5"
+        urgent-color "#b4637a"
+        active-gradient from="#907aa9" to="#d7827e" angle=0 in="oklch longer hue"
+    }
+    shadow {
+        on
+        draw-behind-window true
+        softness 30
+    }
+}
+gestures {
+    hot-corners {
+        off
+    }
+}
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+overview {
+    workspace-shadow {
+        off
+    }
+}
+// STARTUP
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-sh-at-startup "ghostty -e zsh -c 'source ~/.zshrc; ~/.config/niri/scripts/main_term.sh'"
+hotkey-overlay {
+    skip-at-startup
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot_ %Y-%m-%d %H-%M-%S.png"
+// WORKSPACES
+workspace "term"
+workspace "web"
+workspace "files"
+workspace "media"
+workspace "games"
+workspace "misc"
+workspace "social"
+workspace "ide"
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    open-maximized true
+}
+window-rule {
+    match app-id="zen|chromium"
+    open-on-workspace "web"
+    open-maximized true
+}
+window-rule {
+    match app-id="nemo"
+    open-on-workspace "files"
+}
+window-rule {
+    match app-id="Postman"
+    open-on-workspace "ide"
+    open-maximized true
+}
+window-rule {
+    match app-id="jetbrains-datagrip"
+    open-on-workspace "ide"
+    open-maximized true
+}
+window-rule {
+    match app-id="cafe.avery.Delfin"
+    open-on-workspace "media"
+    open-maximized true
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "misc"
+}
+window-rule {
+    match app-id="1password|via-nativia"
+    open-on-workspace "misc"
+}
+window-rule {
+    match app-id="zoom"
+    open-on-workspace "social"
+}
+window-rule {
+    match app-id="discord"
+    open-on-workspace "social"
+}
+window-rule {
+    match app-id="steam"
+    open-on-workspace "games"
+}
+window-rule {
+    geometry-corner-radius 16
+    clip-to-geometry true
+}
+debug {
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+    deactivate-unfocused-windows
+}
+window-rule {
+    match app-id="1password"
+    block-out-from "screen-capture"
+ // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+animations {
+    workspace-switch {
+        // spring damping-ratio=0.7 stiffness=500 epsilon=0.00001
+        off
+    }
+}
+binds {
+    Mod+Shift+Slash {
+        show-hotkey-overlay
+    }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" {
+        spawn "ghostty"
+    }
+    Mod+E hotkey-overlay-title="Open Fille Manager: Nemo" {
+        spawn "nemo"
+    }
+    // Noctalia Binds
+    Mod+Space hotkey-overlay-title="Application Launcher" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+    }
+    Mod+Alt+C hotkey-overlay-title="Clipboard History" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+    }
+    Super+Alt+S hotkey-overlay-title="Session Manager" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+    }
+    Super+Alt+T hotkey-overlay-title="Toggle Control Center" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
+    }
+    Super+Alt+W hotkey-overlay-title="Toggle Wallpaper Selector" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"
+    }
+    Super+Alt+Y hotkey-overlay-title="Toggle Noctalia Setting" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"
+    }
+    Super+Alt+P hotkey-overlay-title="Cycle Power Profiles" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerProfile" "cycle"
+    }
+    Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {
+        screenshot
+    }
+    Super+Shift+Alt+S hotkey-overlay-title="Screen Recorder" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase" 
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease" 
+    }
+    Mod+Shift+O repeat=false {
+        toggle-overview
+    }
+    Mod+Ctrl+Q repeat=false {
+        close-window
+    }
+    Mod+H {
+        focus-column-left
+    }
+    Mod+J {
+        focus-window-down
+    }
+    Mod+K {
+        focus-window-up
+    }
+    Mod+L {
+        focus-column-right
+    }
+    Mod+Shift+H {
+        move-column-left
+    }
+    Mod+Shift+J {
+        move-window-down
+    }
+    Mod+Shift+K {
+        move-window-up
+    }
+    Mod+Shift+L {
+        move-column-right
+    }
+    // Keybinds Workspaces
+    Mod+A {
+        focus-workspace "web"
+    }
+    Mod+O {
+        focus-workspace "misc"
+    }
+    Mod+T {
+        focus-workspace "term"
+    }
+    Mod+S {
+        focus-workspace "media"
+    }
+    Mod+N {
+        focus-workspace "notes"
+    }
+    Mod+X {
+        focus-workspace "ide"
+    }
+    Mod+Z {
+        focus-workspace "social"
+    }
+    Mod+G {
+        focus-workspace "games"
+    }
+    Mod+F {
+        focus-workspace "files"
+    }
+    Mod+Ctrl+A {
+        move-column-to-workspace "web"
+    }
+    Mod+Ctrl+O {
+        move-column-to-workspace "misc"
+    }
+    Mod+Ctrl+T {
+        move-column-to-workspace "term"
+    }
+    Mod+Ctrl+S {
+        move-column-to-workspace "media"
+    }
+    Mod+Ctrl+N {
+        move-column-to-workspace "notes"
+    }
+    Mod+Ctrl+X {
+        move-column-to-workspace "ide"
+    }
+    Mod+Ctrl+Z {
+        move-column-to-workspace "social"
+    }
+    Mod+Ctrl+G {
+        move-column-to-workspace "games"
+    }
+    Mod+Ctrl+F {
+        move-column-to-workspace "files"
+    }
+    // The following binds move the focused window in and out of a column.
+    // If the window is alone, they will consume it into the nearby column to the side.
+    // If the window is already in a column, they will expel it out.
+    Mod+BracketLeft {
+        consume-or-expel-window-left
+    }
+    Mod+BracketRight {
+        consume-or-expel-window-right
+    }
+    // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma {
+        consume-window-into-column
+    }
+    // Expel the bottom window from the focused column to the right.
+    Mod+Period {
+        expel-window-from-column
+    }
+    Mod+R {
+        switch-preset-column-width
+    }
+    Mod+Shift+R {
+        switch-preset-window-height
+    }
+    Mod+Ctrl+R {
+        reset-window-height
+    }
+    Mod+M hotkey-overlay-title="Maximize Column" {
+        maximize-column
+    }
+    Mod+Shift+M hotkey-overlay-title="Fullscreen" {
+        fullscreen-window
+    }
+    Mod+Ctrl+M hotkey-overlay-title="Expand Column to available width" {
+        expand-column-to-available-width
+    }
+    // Center all fully visible columns on screen.
+    // Mod+Ctrl+Shift+C { center-visible-columns; }
+    // Mod+C { center-column; }
+    Mod+Ctrl+Shift+H hotkey-overlay-title="Resize Window Left" {
+        set-column-width "-10%"
+    }
+    Mod+Ctrl+Shift+L hotkey-overlay-title="Resize Window Right" {
+        set-column-width "+10%"
+    }
+    Mod+Ctrl+Shift+J hotkey-overlay-title="Resixe Window Down" {
+        set-window-height "-10%"
+    }
+    Mod+Ctrl+Shift+K hotkey-overlay-title="Resize Window Up" {
+        set-window-height "+10%"
+    }
+    Mod+V {
+        toggle-window-floating
+    }
+    Mod+Shift+V {
+        switch-focus-between-floating-and-tiling
+    }
+    // Toggle tabbed column display mode.
+    // Windows in this column will appear as vertical tabs,
+    // rather than stacked on top of each other.
+    // Mod+W { toggle-column-tabbed-display; }
+    Mod+Escape allow-inhibiting=false {
+        toggle-keyboard-shortcuts-inhibit
+    }
+    Ctrl+Alt+Delete {
+        quit
+    }
+}
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
