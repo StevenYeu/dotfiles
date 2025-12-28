@@ -15,6 +15,7 @@ input {
         tap
         natural-scroll
         click-method  "clickfinger"
+        dwt
     }
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="10%"
