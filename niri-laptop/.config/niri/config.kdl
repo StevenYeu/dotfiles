@@ -11,16 +11,19 @@ input {
     mouse {
         accel-profile "flat"
     }
+    touchpad  {
+        tap
+        natural-scroll
+        click-method  "clickfinger"
+    }
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="10%"
     workspace-auto-back-and-forth
 }
-// output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
-//     scale 1
-//     focus-at-startup
-//     variable-refresh-rate on-demand=true
-//     mode "2560x1440@279.961"
-// }
+output "eDP-1" {
+    mode "2880x1800@120.000"
+    variable-refresh-rate // on-demand=true
+}
 layout {
     background-color "transparent"
     gaps 10
