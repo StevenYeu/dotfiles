@@ -27,7 +27,7 @@ output "eDP-1" {
 }
 layout {
     background-color "transparent"
-    gaps 10
+    gaps 8
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -50,6 +50,10 @@ layout {
         on
         draw-behind-window true
         softness 30
+    }
+    struts {
+        top -3
+        bottom -3
     }
 }
 gestures {
