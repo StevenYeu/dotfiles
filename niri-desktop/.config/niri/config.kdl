@@ -47,6 +47,10 @@ layout {
         draw-behind-window true
         softness 30
     }
+    struts {
+        top -5
+        bottom -5
+    }
 }
 gestures {
     hot-corners {
