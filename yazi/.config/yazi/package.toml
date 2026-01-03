@@ -3,5 +3,15 @@ use = "uhs-robert/recycle-bin"
 rev = "53ad17c"
 hash = "80221fe740a6f251d35845d29391bea7"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "03cdd4b"
+hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "cfb9140"
+hash = "b5067143415bd2d46c0dfa57319ddcef"
+
 [flavor]
 deps = []

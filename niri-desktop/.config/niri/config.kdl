@@ -135,6 +135,10 @@ window-rule {
     geometry-corner-radius 16
     clip-to-geometry true
 }
+window-rule {
+    match app-id="com.github.rafostar.Clapper"
+    open-on-workspace "media"
+}
 debug {
     // Allows notification actions and window activation from Noctalia.
     honor-xdg-activation-with-invalid-serial
