@@ -115,7 +115,7 @@ window-rule {
     open-on-workspace "social"
 }
 window-rule {
-    match app-id="steam"
+    match app-id="steam|heroic"
     open-on-workspace "games"
     open-maximized true
 }
