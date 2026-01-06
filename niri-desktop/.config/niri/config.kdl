@@ -88,7 +88,7 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="zen|chromium"
+    match app-id="zen|chromium|helium"
     open-on-workspace "web"
     open-maximized true
 }
@@ -107,7 +107,7 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="cafe.avery.Delfin"
+    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi"
     open-on-workspace "media"
     open-maximized true
 }
