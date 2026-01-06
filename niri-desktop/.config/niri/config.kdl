@@ -97,47 +97,31 @@ window-rule {
     open-on-workspace "files"
 }
 window-rule {
-    match app-id="Postman"
+    match app-id="Postman|jetbrains-datagrip"
     open-on-workspace "ide"
     open-maximized true
 }
 window-rule {
-    match app-id="jetbrains-datagrip"
-    open-on-workspace "ide"
-    open-maximized true
-}
-window-rule {
-    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi"
+    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi|com.github.rafostar.Clapper"
     open-on-workspace "media"
     open-maximized true
 }
 window-rule {
-    match app-id="obsidian"
+    match app-id="1password|via-nativia|obsidian"
     open-on-workspace "misc"
 }
 window-rule {
-    match app-id="1password|via-nativia"
-    open-on-workspace "misc"
-}
-window-rule {
-    match app-id="zoom"
-    open-on-workspace "social"
-}
-window-rule {
-    match app-id="discord"
+    match app-id="zoom|discord"
     open-on-workspace "social"
 }
 window-rule {
     match app-id="steam"
     open-on-workspace "games"
+    open-maximized true
 }
 window-rule {
     geometry-corner-radius 16
     clip-to-geometry true
-}
-window-rule {
-    match app-id="com.github.rafostar.Clapper"
-    open-on-workspace "media"
 }
 debug {
     // Allows notification actions and window activation from Noctalia.
