@@ -93,7 +93,7 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="nemo"
+    match app-id="nemo|(com.transmissionbt.transmission)"
     open-on-workspace "files"
 }
 window-rule {
