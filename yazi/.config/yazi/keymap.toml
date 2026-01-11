@@ -16,7 +16,10 @@ prepend_keymap = [
     "C",
   ], run = "plugin ouch", desc = "Compress with ouch" },
   { on = "M", run = "plugin mount", desc = "Open Mount menu" },
-  { on = "T", run = "plugin toggle-pane min-preview", desc = "Show/Hide the preview pane" }
+  { on = "T", run = "plugin toggle-pane min-preview", desc = "Show/Hide the preview pane" },
+  { on = "+", run = "plugin zoom 1", desc = "Zoom in on file" },
+  { on = "-", run = "plugin zoom -1", desc = "Zoom out on file" },
+  { on = "P", run = "plugin smart-paste" },
 ]
 keymap = [
   { on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selection, or cancel search" },

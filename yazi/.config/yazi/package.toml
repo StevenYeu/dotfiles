@@ -28,5 +28,15 @@ use = "yazi-rs/plugins:toggle-pane"
 rev = "68f7d48"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "68f7d48"
+hash = "a638db397a5a41d3f3a08a7427ccead1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "68f7d48"
+hash = "75fd60b2df7115e0a6ca31a6a804d320"
+
 [flavor]
 deps = []
