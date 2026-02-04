@@ -191,10 +191,10 @@ binds {
         spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     }
     XF86MonBrightnessUp allow-when-locked=true {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase" 
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"
     }
     XF86MonBrightnessDown allow-when-locked=true {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease" 
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"
     }
     Mod+Shift+O repeat=false {
         toggle-overview
@@ -255,31 +255,31 @@ binds {
         focus-workspace "files"
     }
     Mod+Ctrl+A {
-        move-column-to-workspace "web"
+        move-column-to-workspace focus=false "web"
     }
     Mod+Ctrl+O {
-        move-column-to-workspace "misc"
+        move-column-to-workspace focus=false "misc"
     }
     Mod+Ctrl+T {
-        move-column-to-workspace "term"
+        move-column-to-workspace focus=false "term"
     }
     Mod+Ctrl+S {
-        move-column-to-workspace "media"
+        move-column-to-workspace focus=false "media"
     }
     Mod+Ctrl+N {
-        move-column-to-workspace "notes"
+        move-column-to-workspace focus=false "notes"
     }
     Mod+Ctrl+X {
-        move-column-to-workspace "ide"
+        move-column-to-workspace focus=false "ide"
     }
     Mod+Ctrl+Z {
-        move-column-to-workspace "social"
+        move-column-to-workspace focus=false "social"
     }
     Mod+Ctrl+G {
-        move-column-to-workspace "games"
+        move-column-to-workspace focus=false "games"
     }
     Mod+Ctrl+F {
-        move-column-to-workspace "files"
+        move-column-to-workspace focus=false "files"
     }
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
@@ -352,5 +352,5 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
 }
-
 include "./noctalia.kdl"
+

@@ -138,18 +138,6 @@ return {
                     end
                     nmap("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
                     nmap("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
-                    nmap("n", "gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                    nmap("n", "gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-                    nmap("n", "gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-                    nmap("n", "gl", vim.diagnostic.open_float, "[S]how [D]iagnostic")
-                    nmap("n", "gD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-                    nmap("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-                    nmap("n",
-                        "<leader>ws",
-                        require("telescope.builtin").lsp_dynamic_workspace_symbols,
-                        "[W]orkspace [S]ymbols"
-                    )
                     nmap("n", "K", vim.lsp.buf.hover, "Hover Documentation")
                     nmap("i", "<C-h>", vim.lsp.buf.signature_help, "Signature Documentation")
                 end,
