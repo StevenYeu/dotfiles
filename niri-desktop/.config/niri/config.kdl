@@ -11,6 +11,15 @@ input {
     mouse {
         accel-profile "flat"
     }
+    touchpad {
+        tap
+        natural-scroll
+        click-method "clickfinger"
+        dwt
+    }
+    trackpoint {
+        off
+    }
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="10%"
     workspace-auto-back-and-forth
@@ -20,6 +29,12 @@ output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
     focus-at-startup
     variable-refresh-rate on-demand=true
     mode "2560x1440@279.961"
+}
+output "Samsung Display Corp. ATNA60KA02-0  Unknown" {
+    scale 1.75
+    focus-at-startup
+    variable-refresh-rate
+    mode "3200x2000@120.000"
 }
 layout {
     background-color "transparent"
@@ -351,6 +366,10 @@ binds {
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORM "wayland"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
 }
 include "./noctalia.kdl"
 
