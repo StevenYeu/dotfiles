@@ -155,6 +155,7 @@ return {
                     "html",
                     "zls",
                     "htmx",
+                    "clangd",
                 },
                 automatic_installation = false,
                 handlers = {
