@@ -1,5 +1,4 @@
 shell-integration = zsh
-# font-family = "CaskaydiaMono Nerd Font Mono"
 font-family = "GeistMono Nerd Font"
 font-size = 16
 background-opacity = 0.80
