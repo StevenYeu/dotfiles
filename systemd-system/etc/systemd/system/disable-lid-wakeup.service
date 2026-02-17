@@ -1,0 +1,10 @@
+[Unit]
+Description=Disable LID wake-up trigger
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "echo LID > /proc/acpi/wakeup"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
