@@ -38,7 +38,7 @@ output "Samsung Display Corp. ATNA60KA02-0  Unknown" {
 }
 layout {
     background-color "transparent"
-    gaps 20
+    gaps 30
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -62,10 +62,9 @@ layout {
         draw-behind-window true
         softness 30
     }
-    // struts {
-    //     top -8
-    //     bottom -8
-    // }
+    struts {
+        top -10
+    }
 }
 gestures {
     hot-corners {
