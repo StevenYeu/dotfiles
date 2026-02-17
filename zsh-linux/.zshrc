@@ -24,7 +24,6 @@ alias lsbp="eza --long --color=always --git --no-filesize --icons=always --no-ti
 alias dcupd="docker compose up -d --build"
 alias dcd="docker compose down"
 alias dps="docker ps"
-alias clr="clear"
 alias lg="lazygit"
 alias ldk="lazydocker"
 alias g="~/.g/bin/g"
