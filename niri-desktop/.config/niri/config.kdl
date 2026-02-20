@@ -116,7 +116,7 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi|com.github.rafostar.Clapper"
+    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi|com.github.rafostar.Clapper|org.jellyfin.JellyfinDesktop"
     open-on-workspace "media"
     open-maximized true
 }
