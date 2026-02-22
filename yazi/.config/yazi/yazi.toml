@@ -133,15 +133,18 @@ prepend_previewers = [
   { url = "*.json", run = "duckdb", multi = false },
   { url = "*.parquet", run = "duckdb", multi = false },
   { url = "*.txt", run = "duckdb", multi = false },
-  { url = "*.xlsx", run = "duckdb", multi = false }
+  { url = "*.xlsx", run = "duckdb", multi = false },
+  { url = "/run/user/1000/gvfs/**/*", run = "noop" },
 ]
 prepend_preloaders = [
-  { name = "*.csv", run = "duckdb", multi = false },
-  { name = "*.tsv", run = "duckdb", multi = false },
-  { name = "*.json", run = "duckdb", multi = false },
-  { name = "*.parquet", run = "duckdb", multi = false },
-  { name = "*.txt", run = "duckdb", multi = false },
-  { name = "*.xlsx", run = "duckdb", multi = false }
+  { url = "*.csv", run = "duckdb", multi = false },
+  { url = "*.tsv", run = "duckdb", multi = false },
+  { url = "*.json", run = "duckdb", multi = false },
+  { url = "*.parquet", run = "duckdb", multi = false },
+  { url = "*.txt", run = "duckdb", multi = false },
+  { url = "*.xlsx", run = "duckdb", multi = false },
+  { url = "/run/user/1000/gvfs/**/*", run = "noop" },
+  # { url = "/run/media/lune/**/*", run = "noop" },
 ]
 fetchers = [
   # Mimetype

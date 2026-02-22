@@ -48,5 +48,10 @@ use = "wylie102/duckdb"
 rev = "3f8c863"
 hash = "87b9233a74325e95011670ed20bbd0d4"
 
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "9d64595"
+hash = "b6f691f01a2122bd94866800d4d12a22"
+
 [flavor]
 deps = []
