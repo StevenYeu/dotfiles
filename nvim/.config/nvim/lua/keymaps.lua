@@ -23,6 +23,12 @@ vim.keymap.set(
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Replace highlighted word" }
 )
+vim.keymap.set(
+    "v",
+    "<leader>rs",
+    [[y:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Replace highlighted word" }
+)
 
 vim.keymap.set(
     "n",
