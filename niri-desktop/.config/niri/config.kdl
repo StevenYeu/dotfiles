@@ -53,9 +53,7 @@ layout {
     }
     border {
         width 4
-        inactive-color "#9893a5"
-        urgent-color "#b4637a"
-        active-gradient from="#907aa9" to="#d7827e" angle=0 in="oklch longer hue"
+        // colors handled by noctalia
     }
     shadow {
         on
