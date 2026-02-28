@@ -80,7 +80,9 @@ overview {
 }
 // STARTUP
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-sh-at-startup "ghostty -e zsh -c 'source ~/.zshrc; ~/.config/niri/scripts/main_term.sh'"
+
 hotkey-overlay {
     skip-at-startup
 }
