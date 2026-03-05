@@ -1,6 +1,6 @@
 shell-integration = zsh
 theme = Rose Pine
-font-family = "CaskaydiaMono Nerd Font Mono"
+font-family = "GeistMono Nerd Font"
 font-size = 18
 macos-titlebar-style = hidden
 background-opacity = 0.8
