@@ -4,6 +4,7 @@
 
 [mgr]
 prepend_keymap = [
+  { on = ["F", "G"], run = "plugin yafg", desc = "Search Contents" },
   { on = [
     "R",
     "b",

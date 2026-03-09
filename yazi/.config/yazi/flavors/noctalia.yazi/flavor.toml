@@ -76,9 +76,9 @@ selected = { reversed = true }
 # : Tabs [[[
 
 [tabs]
-active = { fg = "#ebbcba", bold = true, bg = "#191724" }
+active = { fg = "#191724", bold = true, bg = "#ebbcba" }
 inactive = { fg = "#9ccfd8", bg = "#191724" }
-sep_inner = { open = "[", close = "]" }
+sep_inner = { open = "", close = "" }
 
 # : ]]]
 
