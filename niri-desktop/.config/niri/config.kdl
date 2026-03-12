@@ -117,6 +117,7 @@ window-rule {
 window-rule {
     match app-id="1password|via-nativia|obsidian"
     open-on-workspace "misc"
+    exclude title="^1Password$"
 }
 window-rule {
     match app-id="zoom|discord"
