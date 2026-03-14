@@ -125,6 +125,7 @@ window-rule {
 }
 window-rule {
     match app-id="steam|heroic"
+    exclude title="^Friend"
     open-on-workspace "games"
     open-maximized true
 }
