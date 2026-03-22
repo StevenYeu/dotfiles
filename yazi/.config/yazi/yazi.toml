@@ -129,6 +129,7 @@ prepend_previewers = [
   { url = "*.csv", run = "duckdb", multi = false },
   { url = "*.tsv", run = "duckdb", multi = false },
   { url = "/run/user/1000/gvfs/**/*", run = "noop" },
+  { url = "/run/media/lune/**/*", run = "noop" },
   { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
   { url = "/Volumes/media/**/*", run = "noop" },
   { url = "/Volumes/music/**/*", run = "noop" },
