@@ -2,6 +2,7 @@
 mkdir -p $HOME/.local/bin
 mkdir $HOME/Repos
 mkdir $HOME/Projects
+mkdir $HOME/Work
 
 ## Zsh setup
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -14,7 +15,7 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZS
 bat cache --build
 
 ## Configure git fzf
-git clone https://github.com/junegunn/fzf-git.sh.git $HOME/Repos/fzf-git.sh
+# git clone https://github.com/junegunn/fzf-git.sh.git $HOME/Repos/fzf-git.sh
 
 ## Copy over wallpapers
-git clone https://github.com/JaKooLit/Wallpaper-Bank.git $HOME/Pictures/Wallpapers
+# git clone https://github.com/JaKooLit/Wallpaper-Bank.git $HOME/Pictures/Wallpapers
