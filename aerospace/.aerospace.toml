@@ -251,3 +251,7 @@ run = 'move-node-to-workspace games'
 [[on-window-detected]]
 if.app-id = 'com.firecore.infuse'
 run = 'move-node-to-workspace media'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.WorkflowKit.ShortcutsViewService'
+run = 'fullscreen'
