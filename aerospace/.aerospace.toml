@@ -254,4 +254,4 @@ run = 'move-node-to-workspace media'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.WorkflowKit.ShortcutsViewService'
-run = 'fullscreen'
+run = 'layout floating'
