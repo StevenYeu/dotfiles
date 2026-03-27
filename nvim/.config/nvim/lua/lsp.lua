@@ -10,12 +10,12 @@ vim.diagnostic.config({
         },
     },
 })
--- vim.lsp.config("*", {
---     capabilities = {
---         require('blink.cmp').get_lsp_capabilities()
---         -- require('cmp_nvim_lsp').default_capabilities()
---     }
--- })
+vim.lsp.config("*", {
+    capabilities = {
+        -- require('blink.cmp').get_lsp_capabilities()
+        require('cmp_nvim_lsp').default_capabilities()
+    }
+})
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -59,18 +59,6 @@ vim.lsp.config("ruff", {
         end
     end,
 })
-
--- vim.lsp.config("tailwindcss", {
---     filetypes = {
---         "templ",
---         "typescriptreact",
---         "javascriptreact",
---         "javascript",
---         "typescript",
---         "react",
---     },
---     init_options = { userLanguages = { templ = "html" } },
--- })
 vim.lsp.config("html", {
     filetypes = { "html", "templ" }
 })
@@ -80,3 +68,6 @@ vim.lsp.config("htmx", {
 vim.lsp.config("bashls", {
     filetypes = { "sh", "zsh" },
 })
+
+vim.lsp.config('gdscript', {})
+vim.lsp.enable('gdscript')
