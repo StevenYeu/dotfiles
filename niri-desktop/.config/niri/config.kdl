@@ -121,6 +121,7 @@ window-rule {
 }
 window-rule {
     match app-id="zoom|discord"
+    open-focused false
     open-on-workspace "social"
 }
 window-rule {
