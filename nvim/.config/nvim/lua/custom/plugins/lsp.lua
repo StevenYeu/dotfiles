@@ -4,6 +4,30 @@ return {
         lazy = false,
         opts = {},
     },
+    -- {
+    --     'saghen/blink.cmp',
+    --     dependencies = { { 'rafamadriz/friendly-snippets' }, { 'L3MON4D3/LuaSnip', version = 'v2.*' } },
+    --     version = '1.*',
+    --     ---@module 'blink.cmp'
+    --     ---@type blink.cmp.Config
+    --     opts = {
+    --         snippets = { preset = 'luasnip' },
+    --         sources = {
+    --             providers = {
+    --                 snippets = {
+    --                     opt = {
+    --                         extended_filetypes = {
+    --                             sh = { 'shelldoc' },
+    --                             templ = { 'html' },
+    --                             typescriptreact = { 'html' }
+    --                         },
+    --                     }
+    --                 },
+    --             }
+    --         },
+    --         completion = { documentation = { auto_show = true } },
+    --     },
+    -- },
     {
         "hrsh7th/nvim-cmp",
         event = 'InsertEnter',
@@ -103,45 +127,7 @@ return {
                 },
             }
         },
-        init = function()
-            vim.opt.signcolumn = 'yes'
-        end,
         config = function()
-            -- disagnostic signs
-            local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-            -- Using the vim.diagnostic API with the 'signs' key
-            vim.diagnostic.config({
-                signs = {
-                    text = {
-                        [vim.diagnostic.severity.ERROR] = signs.Error,
-                        [vim.diagnostic.severity.WARN] = signs.Warning,
-                        [vim.diagnostic.severity.INFO] = signs.Information,
-                        [vim.diagnostic.severity.HINT] = signs.Hint,
-                    },
-                },
-            })
-            local lsp_defaults = require('lspconfig').util.default_config
-            lsp_defaults.capabilities = vim.tbl_deep_extend(
-                'force',
-                lsp_defaults.capabilities,
-                require('cmp_nvim_lsp').default_capabilities()
-            )
-
-            vim.api.nvim_create_autocmd('LspAttach', {
-                desc = 'LSP actions',
-                callback = function(event)
-                    local nmap = function(mode, keys, func, desc)
-                        if desc then
-                            desc = "LSP: " .. desc
-                        end
-                        vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
-                    end
-                    nmap("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                    nmap("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-                    nmap("n", "K", vim.lsp.buf.hover, "Hover Documentation")
-                    nmap("i", "<C-h>", vim.lsp.buf.signature_help, "Signature Documentation")
-                end,
-            })
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "ts_ls",
@@ -157,63 +143,7 @@ return {
                     "htmx",
                     "clangd",
                 },
-                automatic_installation = false,
-                handlers = {
-                    function(server_name)
-                        require('lspconfig')[server_name].setup({})
-                    end,
-                    pyright = function()
-                        require("lspconfig").pyright.setup({
-                            settings = {
-                                pyright = {
-                                    disableOrganizeImports = true,
-                                },
-                                python = {
-                                    analysis = {
-                                        typeCheckingMode = "strict",
-                                    },
-                                },
-                            },
-                        })
-                    end,
-                    ruff = function()
-                        require("lspconfig").ruff.setup({
-                            on_attach = function(client, _)
-                                if client.name == "ruff" then
-                                    client.server_capabilities.hoverProvider = false
-                                end
-                            end,
-                        })
-                    end,
-                    tailwindcss = function()
-                        require("lspconfig").tailwindcss.setup({
-                            filetypes = {
-                                "templ",
-                                "typescriptreact",
-                                "javascriptreact",
-                                "javascript",
-                                "typescript",
-                                "react",
-                            },
-                            init_options = { userLanguages = { templ = "html" } },
-                        })
-                    end,
-                    html = function()
-                        require("lspconfig").html.setup({
-                            filetypes = { "html", "templ" },
-                        })
-                    end,
-                    htmx = function()
-                        require("lspconfig").htmx.setup({
-                            filetypes = { "html", "templ" },
-                        })
-                    end,
-                    bashls = function()
-                        require("lspconfig").bashls.setup({
-                            filetypes = { "sh", "zsh" },
-                        })
-                    end
-                },
+                automatic_enable = true
             })
         end
     } }
