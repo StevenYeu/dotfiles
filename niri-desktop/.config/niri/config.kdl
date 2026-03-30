@@ -115,7 +115,7 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="1password|via-nativia|obsidian"
+    match app-id="1password|via-nativia"
     open-on-workspace "misc"
     exclude title="^1Password$"
 }
