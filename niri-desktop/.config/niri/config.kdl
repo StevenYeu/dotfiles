@@ -47,7 +47,7 @@ layout {
     }
     border {
         width 4
-        // colors handled by noctalia
+ // colors handled by noctalia
     }
     shadow {
         on
@@ -76,7 +76,6 @@ overview {
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-sh-at-startup "ghostty -e zsh -c 'source ~/.zshrc; ~/.config/niri/scripts/main_term.sh'"
-
 hotkey-overlay {
     skip-at-startup
 }
@@ -123,6 +122,11 @@ window-rule {
     match app-id="zoom|discord"
     open-focused false
     open-on-workspace "social"
+}
+window-rule {
+    match app-id="^zoom" title="^annotate_toolbar$"
+    open-on-workspace "other"
+    open-focused false
 }
 window-rule {
     match app-id="steam|heroic"
