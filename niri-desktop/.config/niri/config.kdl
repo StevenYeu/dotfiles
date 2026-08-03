@@ -31,12 +31,14 @@ output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
     mode "2560x1440@279.961"
 }
 output "eDP-1" {
-    scale 1.75
+    scale 1.50
     variable-refresh-rate on-demand=true
 }
+
 switch-events {
     lid-close {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"
+        //spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
     }
 }
 layout {
