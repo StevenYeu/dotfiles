@@ -1,0 +1,208 @@
+binds {
+    Mod+Shift+Slash {
+        show-hotkey-overlay
+    }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" {
+        spawn "ghostty"
+    }
+    Mod+E hotkey-overlay-title="Open Fille Manager: Nemo" {
+        spawn "nemo"
+    }
+    // Noctalia Binds
+    Mod+Space hotkey-overlay-title="Application Launcher" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+    }
+    Mod+Alt+C hotkey-overlay-title="Clipboard History" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+    }
+    Super+Alt+S hotkey-overlay-title="Session Manager" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+    }
+    Super+Alt+T hotkey-overlay-title="Toggle Control Center" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
+    }
+    Super+Alt+W hotkey-overlay-title="Toggle Wallpaper Selector" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"
+    }
+    Super+Alt+Y hotkey-overlay-title="Toggle Noctalia Setting" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"
+    }
+    Super+Alt+P hotkey-overlay-title="Cycle Power Profiles" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerProfile" "cycle"
+    }
+    Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {
+        screenshot
+    }
+    Super+Shift+Alt+S hotkey-overlay-title="Screen Recorder" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"
+    }
+    Mod+Shift+O repeat=false {
+        toggle-overview
+    }
+    Mod+Ctrl+Q repeat=false {
+        close-window
+    }
+    Mod+H {
+        focus-column-left
+    }
+    Mod+J {
+        focus-window-down
+    }
+    Mod+K {
+        focus-window-up
+    }
+    Mod+L {
+        focus-column-right
+    }
+    Mod+Shift+H {
+        move-column-left
+    }
+    Mod+Shift+J {
+        move-window-down
+    }
+    Mod+Shift+K {
+        move-window-up
+    }
+    Mod+Shift+L {
+        move-column-right
+    }
+    // Keybinds Workspaces
+    Mod+A {
+        focus-workspace "web"
+    }
+    Mod+O {
+        focus-workspace "misc"
+    }
+    Mod+T {
+        focus-workspace "term"
+    }
+    Mod+S {
+        focus-workspace "media"
+    }
+    Mod+N {
+        focus-workspace "notes"
+    }
+    Mod+X {
+        focus-workspace "ide"
+    }
+    Mod+Z {
+        focus-workspace "social"
+    }
+    Mod+G {
+        focus-workspace "games"
+    }
+    Mod+F {
+        focus-workspace "files"
+    }
+    Mod+Ctrl+A {
+        move-column-to-workspace focus=false "web"
+    }
+    Mod+Ctrl+O {
+        move-column-to-workspace focus=false "misc"
+    }
+    Mod+Ctrl+T {
+        move-column-to-workspace focus=false "term"
+    }
+    Mod+Ctrl+S {
+        move-column-to-workspace focus=false "media"
+    }
+    Mod+Ctrl+N {
+        move-column-to-workspace focus=false "notes"
+    }
+    Mod+Ctrl+X {
+        move-column-to-workspace focus=false "ide"
+    }
+    Mod+Ctrl+Z {
+        move-column-to-workspace focus=false "social"
+    }
+    Mod+Ctrl+G {
+        move-column-to-workspace focus=false "games"
+    }
+    Mod+Ctrl+F {
+        move-column-to-workspace focus=false "files"
+    }
+    // The following binds move the focused window in and out of a column.
+    // If the window is alone, they will consume it into the nearby column to the side.
+    // If the window is already in a column, they will expel it out.
+    Mod+BracketLeft {
+        consume-or-expel-window-left
+    }
+    Mod+BracketRight {
+        consume-or-expel-window-right
+    }
+    // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma {
+        consume-window-into-column
+    }
+    // Expel the bottom window from the focused column to the right.
+    Mod+Period {
+        expel-window-from-column
+    }
+    Mod+R {
+        switch-preset-column-width
+    }
+    Mod+Shift+R {
+        switch-preset-window-height
+    }
+    Mod+Ctrl+R {
+        reset-window-height
+    }
+    Mod+M hotkey-overlay-title="Maximize Column" {
+        maximize-column
+    }
+    Mod+Shift+M hotkey-overlay-title="Fullscreen" {
+        fullscreen-window
+    }
+    Mod+Ctrl+M hotkey-overlay-title="Expand Column to available width" {
+        expand-column-to-available-width
+    }
+    // Center all fully visible columns on screen.
+    // Mod+Ctrl+Shift+C { center-visible-columns; }
+    // Mod+C { center-column; }
+    Mod+Ctrl+Shift+H hotkey-overlay-title="Resize Window Left" {
+        set-column-width "-10%"
+    }
+    Mod+Ctrl+Shift+L hotkey-overlay-title="Resize Window Right" {
+        set-column-width "+10%"
+    }
+    Mod+Ctrl+Shift+J hotkey-overlay-title="Resixe Window Down" {
+        set-window-height "-10%"
+    }
+    Mod+Ctrl+Shift+K hotkey-overlay-title="Resize Window Up" {
+        set-window-height "+10%"
+    }
+    Mod+V {
+        toggle-window-floating
+    }
+    Mod+Shift+V {
+        switch-focus-between-floating-and-tiling
+    }
+    // Toggle tabbed column display mode.
+    // Windows in this column will appear as vertical tabs,
+    // rather than stacked on top of each other.
+    // Mod+W { toggle-column-tabbed-display; }
+    Mod+Escape allow-inhibiting=false {
+        toggle-keyboard-shortcuts-inhibit
+    }
+    Ctrl+Alt+Delete {
+        quit
+    }
+}

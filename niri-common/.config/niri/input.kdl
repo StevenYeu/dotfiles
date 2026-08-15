@@ -1,0 +1,24 @@
+input {
+    keyboard {
+        xkb {
+            options "ctrl:nocaps"
+        }
+        repeat-delay 600
+        repeat-rate 35
+    }
+    mouse {
+        accel-profile "flat"
+    }
+    touchpad {
+        tap
+        natural-scroll
+        click-method "clickfinger"
+        dwt
+    }
+    trackpoint {
+        off
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="10%"
+    workspace-auto-back-and-forth
+}

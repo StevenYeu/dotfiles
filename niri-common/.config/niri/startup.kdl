@@ -1,0 +1,19 @@
+// STARTUP
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-sh-at-startup "ghostty -e zsh -c 'source ~/.zshrc; ~/.config/niri/scripts/main_term.sh'"
+hotkey-overlay {
+    skip-at-startup
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot_ %Y-%m-%d %H-%M-%S.png"
+// WORKSPACES
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORM "wayland"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+}
+

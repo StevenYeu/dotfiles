@@ -1,0 +1,72 @@
+workspace "term"
+workspace "web"
+workspace "files"
+workspace "media"
+workspace "games"
+workspace "misc"
+workspace "social"
+workspace "ide"
+debug {
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+    deactivate-unfocused-windows
+}
+window-rule {
+    match app-id="1password"
+    block-out-from "screen-capture"
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+animations {
+    workspace-switch {
+        off
+    }
+}
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    open-maximized true
+}
+window-rule {
+    match app-id="zen|chromium|helium"
+    open-on-workspace "web"
+    open-maximized true
+}
+window-rule {
+    match app-id="nemo|(com.transmissionbt.transmission)"
+    open-on-workspace "files"
+}
+window-rule {
+    match app-id="Postman|jetbrains-datagrip"
+    open-on-workspace "ide"
+    open-maximized true
+}
+window-rule {
+    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi|com.github.rafostar.Clapper|org.jellyfin.JellyfinDesktop"
+    open-on-workspace "media"
+    open-maximized true
+}
+window-rule {
+    match app-id="1password|via-nativia"
+    open-on-workspace "misc"
+    exclude title="^1Password$"
+}
+window-rule {
+    match app-id="zoom|discord"
+    open-focused false
+    open-on-workspace "social"
+}
+window-rule {
+    match app-id="^zoom" title="^annotate_toolbar$"
+    open-on-workspace "other"
+    open-focused false
+}
+window-rule {
+    match app-id="steam|heroic"
+    exclude title="^Friend"
+    open-on-workspace "games"
+    open-maximized true
+}
+window-rule {
+    geometry-corner-radius 16
+    clip-to-geometry true
+}
