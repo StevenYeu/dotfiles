@@ -23,7 +23,7 @@ layout {
         softness 30
     }
     struts {
-        top -10
+        top -20
     }
 }
 gestures {
