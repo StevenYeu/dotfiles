@@ -4,4 +4,5 @@ include "./input.kdl"
 include "./windows.kdl"
 include "./binds.kdl"
 include "./outputs.kdl"
-include "./noctalia.kdl"
+
+include "noctalia.kdl"

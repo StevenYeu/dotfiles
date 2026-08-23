@@ -1,7 +1,7 @@
 shell-integration = zsh
 font-family = "GeistMono Nerd Font"
 font-size = 16
-background-opacity = 0.80
+background-opacity = 0.70
 window-padding-x = 20
 window-padding-y = 20
 cursor-style-blink = false

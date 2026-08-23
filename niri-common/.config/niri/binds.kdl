@@ -8,51 +8,51 @@ binds {
     Mod+E hotkey-overlay-title="Open Fille Manager: Nemo" {
         spawn "nemo"
     }
+    Shift+Mod+P {
+        spawn-sh "op item get Snippets --reveal --fields ad | wl-copy --trim-newline"
+    }
     // Noctalia Binds
     Mod+Space hotkey-overlay-title="Application Launcher" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+        spawn-sh "noctalia msg panel-toggle launcher"
     }
     Mod+Alt+C hotkey-overlay-title="Clipboard History" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+        spawn-sh "noctalia msg panel-toggle clipboard"
     }
     Super+Alt+S hotkey-overlay-title="Session Manager" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+        spawn-sh "noctalia msg panel-toggle session"
     }
     Super+Alt+T hotkey-overlay-title="Toggle Control Center" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
+        spawn-sh "noctalia msg panel-toggle control-center"
     }
     Super+Alt+W hotkey-overlay-title="Toggle Wallpaper Selector" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"
+        spawn-sh "noctalia msg panel-toggle wallpaper"
     }
     Super+Alt+Y hotkey-overlay-title="Toggle Noctalia Setting" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"
+        spawn-sh "noctalia msg settings-toggle"
     }
     Super+Alt+P hotkey-overlay-title="Cycle Power Profiles" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerProfile" "cycle"
+        spawn-sh "noctalia msg power-cycle"
     }
     Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {
         screenshot
     }
-    Super+Shift+Alt+S hotkey-overlay-title="Screen Recorder" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
+    //Super+Shift+Alt+S hotkey-overlay-title="Screen Recorder" {
+    //    spawn "qs" "-c" "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
+    //}
+    XF86AudioRaiseVolume {
+        spawn-sh "noctalia msg volume-up"
     }
-    XF86AudioRaiseVolume allow-when-locked=true {
-        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"
+    XF86AudioLowerVolume {
+        spawn-sh "noctalia msg volume-down"
     }
-    XF86AudioLowerVolume allow-when-locked=true {
-        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"
+    XF86AudioMute {
+        spawn-sh "noctalia msg volume-mute"
     }
-    XF86AudioMute allow-when-locked=true {
-        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    XF86MonBrightnessUp {
+        spawn-sh "noctalia msg brightness-up"
     }
-    XF86AudioMicMute allow-when-locked=true {
-        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-    }
-    XF86MonBrightnessUp allow-when-locked=true {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"
-    }
-    XF86MonBrightnessDown allow-when-locked=true {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"
+    XF86MonBrightnessDown {
+        spawn-sh "noctalia msg brightness-down"
     }
     Mod+Shift+O repeat=false {
         toggle-overview
