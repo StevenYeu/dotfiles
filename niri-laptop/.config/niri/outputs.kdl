@@ -9,9 +9,3 @@ output "eDP-1" {
     variable-refresh-rate on-demand=true
 }
 
-switch-events {
-    lid-close {
-        //spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
-    }
-}
