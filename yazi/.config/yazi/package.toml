@@ -1,47 +1,47 @@
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "53ad17c"
-hash = "80221fe740a6f251d35845d29391bea7"
+rev = "fe48a02"
+hash = "edd449b02a169bd8fee052be96a31823"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "03cdd4b"
-hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
+rev = "72f9e3c"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "cfb9140"
-hash = "b5067143415bd2d46c0dfa57319ddcef"
+rev = "cfe4f50"
+hash = "eff5702573b6cfba61e4ac8b1969629a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "03cdd4b"
-hash = "3996fc74044bc44144b323686f887e1"
+rev = "72f9e3c"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "68f7d48"
-hash = "e2d4bfccf31e5ab05f46fee4797c5215"
+rev = "72f9e3c"
+hash = "46cbdc05596a3ecd730b288e28c7079d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "68f7d48"
-hash = "8a7c58225816a163a6e8730c0adafbc8"
+rev = "72f9e3c"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:zoom"
-rev = "68f7d48"
-hash = "a638db397a5a41d3f3a08a7427ccead1"
+rev = "72f9e3c"
+hash = "e8e279463ee99c940e6945a14cf4aa9e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-paste"
-rev = "68f7d48"
-hash = "75fd60b2df7115e0a6ca31a6a804d320"
+rev = "72f9e3c"
+hash = "3f8d49413bc8691b4c652eb417a20178"
 
 [[plugin.deps]]
 use = "kirasok/torrent-preview"
-rev = "f465282"
-hash = "d849ad596b8a77902e62a42403aeba40"
+rev = "d745df6"
+hash = "cf91ea69fa7626160d7246dbda0ea545"
 
 [[plugin.deps]]
 use = "wylie102/duckdb"
@@ -50,8 +50,8 @@ hash = "87b9233a74325e95011670ed20bbd0d4"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "9d64595"
-hash = "b6f691f01a2122bd94866800d4d12a22"
+rev = "ebdb87c"
+hash = "69c24ef7e0a591864c76ac6e6dedc805"
 
 [[plugin.deps]]
 use = "navysky12/comicthumb"
@@ -60,13 +60,13 @@ hash = "345d65c19cdd4bc0a2210bf1be50038c"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "1962818"
-hash = "384464b6df8cb807425c521f8cd790f3"
+rev = "72f9e3c"
+hash = "45a533508a9840cc5a10cf6129f63e6a"
 
 [[plugin.deps]]
 use = "XYenon/yafg"
-rev = "dd03b13"
-hash = "59a4d7d65f49d4b064d60e65fb1242c6"
+rev = "e6ba851"
+hash = "9558dd9169cbf01eac6044583c426716"
 
 [flavor]
 deps = []
