@@ -30,6 +30,5 @@ require("lazy").setup({
             require('lualine').setup({})
         end
     },
-    { "numToStr/Comment.nvim",  opts = {} },
     { import = "custom.plugins" },
 }, {})
