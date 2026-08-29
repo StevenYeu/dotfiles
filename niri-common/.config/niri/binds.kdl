@@ -60,6 +60,7 @@ binds {
     Mod+Ctrl+Q repeat=false {
         close-window
     }
+    // Window/Column Movement
     Mod+H {
         focus-column-left
     }

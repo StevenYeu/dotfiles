@@ -27,12 +27,14 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="zen|chromium|helium"
+    match app-id="zen"
+    match app-id="chromiumm"
+    match app-id="helium"
     open-on-workspace "web"
     open-maximized true
 }
 window-rule {
-    match app-id="nemo|(com.transmissionbt.transmission)"
+    match app-id="nemo"
     open-on-workspace "files"
 }
 window-rule {
@@ -46,9 +48,8 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match app-id="1password|via-nativia"
+    match app-id="via-nativia"
     open-on-workspace "misc"
-    exclude title="^1Password$"
 }
 window-rule {
     match app-id="zoom|discord"
@@ -61,7 +62,8 @@ window-rule {
     open-focused false
 }
 window-rule {
-    match app-id="steam|heroic"
+    match app-id="steam"
+    match app-id="heroic"
     exclude title="^Friend"
     open-on-workspace "games"
     open-maximized true
@@ -72,6 +74,7 @@ window-rule {
 }
 window-rule {
     match app-id="dev.noctalia.Noctalia"
+    match app-id="1password"
     open-floating true
     default-column-width {
         fixed 1080
@@ -80,3 +83,4 @@ window-rule {
         fixed 920
     }
 }
+
