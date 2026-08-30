@@ -149,12 +149,15 @@ binds {
     Mod+BracketRight {
         consume-or-expel-window-right
     }
+    Mod+Alt+Slash hotkey-overlay-title="Toggle Tabs" {
+        toggle-column-tabbed-display
+    }
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma {
+    Mod+Comma hotkey-overlay-title="Consume into Column" {
         consume-window-into-column
     }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period {
+    Mod+Period hotkey-overlay-title="Expel from Column" {
         expel-window-from-column
     }
     Mod+R {
