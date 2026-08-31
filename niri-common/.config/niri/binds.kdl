@@ -65,10 +65,10 @@ binds {
         focus-column-left
     }
     Mod+J {
-        focus-window-down
+        focus-window-down-or-top
     }
     Mod+K {
-        focus-window-up
+        focus-window-up-or-bottom
     }
     Mod+L {
         focus-column-right
