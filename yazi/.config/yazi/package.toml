@@ -5,7 +5,7 @@ hash = "edd449b02a169bd8fee052be96a31823"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "72f9e3c"
+rev = "c591a36"
 hash = "87472b05a8c420100f6a2b9cde1e7746"
 
 [[plugin.deps]]
@@ -15,27 +15,27 @@ hash = "eff5702573b6cfba61e4ac8b1969629a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "72f9e3c"
+rev = "c591a36"
 hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "72f9e3c"
-hash = "46cbdc05596a3ecd730b288e28c7079d"
+rev = "c591a36"
+hash = "b95f898e6dc60b52edbc415952e14395"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "72f9e3c"
+rev = "c591a36"
 hash = "5b2fbef7d1513ce38ff72623a071a5e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:zoom"
-rev = "72f9e3c"
+rev = "c591a36"
 hash = "e8e279463ee99c940e6945a14cf4aa9e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-paste"
-rev = "72f9e3c"
+rev = "c591a36"
 hash = "3f8d49413bc8691b4c652eb417a20178"
 
 [[plugin.deps]]
@@ -50,8 +50,8 @@ hash = "87b9233a74325e95011670ed20bbd0d4"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "ebdb87c"
-hash = "69c24ef7e0a591864c76ac6e6dedc805"
+rev = "a85d659"
+hash = "1866f00532ba80f895544f7348e89e53"
 
 [[plugin.deps]]
 use = "navysky12/comicthumb"
@@ -60,7 +60,7 @@ hash = "345d65c19cdd4bc0a2210bf1be50038c"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "72f9e3c"
+rev = "c591a36"
 hash = "45a533508a9840cc5a10cf6129f63e6a"
 
 [[plugin.deps]]
