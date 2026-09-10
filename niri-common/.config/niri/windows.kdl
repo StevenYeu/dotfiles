@@ -13,6 +13,7 @@ debug {
 }
 window-rule {
     match app-id="1password"
+    match app-id="bitwarden"
     block-out-from "screen-capture"
  // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
@@ -75,6 +76,7 @@ window-rule {
 window-rule {
     match app-id="dev.noctalia.Noctalia"
     match app-id="1password"
+    match app-id="bitwarden"
     open-floating true
     default-column-width {
         fixed 1080
