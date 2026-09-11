@@ -86,3 +86,7 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="re.sonny.Junction"
+    open-floating true
+}
