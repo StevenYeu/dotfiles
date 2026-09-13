@@ -90,3 +90,9 @@ window-rule {
     match app-id="re.sonny.Junction"
     open-floating true
 }
+
+window-rule {
+    match title="Termusic Player"
+    open-on-workspace "media"
+    open-maximized true
+}

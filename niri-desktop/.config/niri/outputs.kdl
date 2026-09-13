@@ -1,3 +1,5 @@
+spawn-at-startup "easyeffects" "--gapplication-service"
+
 output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25392F004832" {
     scale 1
     focus-at-startup

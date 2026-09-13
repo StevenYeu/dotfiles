@@ -8,9 +8,6 @@ binds {
     Mod+E hotkey-overlay-title="Open Fille Manager: Nemo" {
         spawn "nemo"
     }
-    Shift+Mod+P {
-        spawn-sh "op item get Snippets --reveal --fields ad | wl-copy --trim-newline"
-    }
     // Noctalia Binds
     Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn-sh "noctalia msg panel-toggle launcher"
@@ -36,9 +33,9 @@ binds {
     Super+Shift+Alt+A hotkey-overlay-title="Screenshot" {
         screenshot
     }
-    //Super+Shift+Alt+S hotkey-overlay-title="Screen Recorder" {
-    //    spawn "qs" "-c" "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"
-    //}
+    Super+Shift+A hotkey-overlay-title="Launch Termusic" {
+        spawn "ghostty"  "--title=Termusic Player" "--working-directory=~/Media/Music" "-e" "termusic"
+    }
     XF86AudioRaiseVolume {
         spawn-sh "noctalia msg volume-up"
     }

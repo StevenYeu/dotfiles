@@ -27,19 +27,11 @@ alias dps="docker ps"
 alias lg="lazygit"
 alias ldk="lazydocker"
 alias g="~/.g/bin/g"
-alias snp="op item get Snippets --reveal --fields "
 alias vpn="sudo openconnect --user syeu@ucsd.edu --authgroup '2-Step Secured - split' vpn.ucsd.edu"
 
 bindkey -v
 bindkey '^n' menu-complete
 bindkey '^p' reverse-menu-complete
-
-# Pyenv setup
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init - zsh)"
-# eval "$(pyenv virtualenv-init - zsh)"
 
 # Fzf setup
 source <(fzf --zsh)
@@ -95,9 +87,6 @@ eval "$(starship init zsh)"
 
 # Zoxide 
 eval "$(zoxide init zsh)"
-
-# 1password completion
-eval "$(op completion zsh)"; compdef _op op
 
 # Golang Version Manager
 if [[ -n $(alias g 2>/dev/null) ]]; then
