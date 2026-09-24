@@ -1,4 +1,4 @@
-
+source ~/.zshrc
 SESSION_NAME="main"
 
 # Check if the session already exists
