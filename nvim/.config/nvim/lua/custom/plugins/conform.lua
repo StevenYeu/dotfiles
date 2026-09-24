@@ -61,6 +61,7 @@ return {
                 svelte = { "prettierd" },
                 css = { "prettierd" },
                 json = { "prettierd" },
+                graphql = { "prettierd" },
                 html = { "prettierd" },
                 markdown = { "prettierd" },
                 templ = { "templ" },
