@@ -31,8 +31,6 @@ ueberzug_offset = [0, 0, 0, 0]
 [opener]
 edit = [
   { run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix", block = true },
-  { run = "code %s", desc = "code", for = "windows", orphan = true },
-  { run = "code -w %s", desc = "code (block)", for = "windows", block = true },
 ]
 play = [
   { run = "xdg-open %s1", desc = "Play", for = "linux" },
@@ -57,11 +55,14 @@ reveal = [
 ]
 # extract = [{ run = "ya pub extract --list %s", desc = "Extract here" }]
 extract = [
-  { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+  { run = 'ouch d -y "%s1"', desc = "Extract here with ouch", for = "unix" },
 ]
 download = [
   { run = "ya emit download --open %S", desc = "Download and open" },
   { run = "ya emit download %S", desc = "Download" },
+]
+satty = [
+  { run = 'satty --filename "%s1"', orphan = true, desc = "Annotate with Satty", for = "unix" },
 ]
 
 [open]
@@ -79,6 +80,7 @@ rules = [
   ] },
   # Image
   { mime = "image/*", use = [
+    "satty",
     "open",
     "reveal",
   ] },
