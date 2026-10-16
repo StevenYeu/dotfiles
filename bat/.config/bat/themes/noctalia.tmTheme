@@ -1180,7 +1180,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#42404e</string>
+          <string>#403d52</string>
           <key>fontStyle</key>
           <string>strikethrough</string>
         </dict>

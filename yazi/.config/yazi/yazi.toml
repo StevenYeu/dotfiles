@@ -62,7 +62,7 @@ download = [
   { run = "ya emit download %S", desc = "Download" },
 ]
 satty = [
-  { run = 'satty --filename "%s1"', orphan = true, desc = "Annotate with Satty", for = "unix" },
+  { run = "satty --filename %s1", orphan = true, desc = "Annotate with Satty", for = "unix" },
 ]
 
 [open]
@@ -138,6 +138,7 @@ prepend_previewers = [
   { url = "/mnt/nas/music/**/*", run = "noop" },
   { url = "/mnt/nas/comics/**/*", run = "noop" },
   # { mine = "application/{*zip,rar}", url = "*.cb[7rz]", run = "comicthumb" },
+  { mime = "audio/*", run = "exifaudio" },
   { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch" },
 ]
 prepend_preloaders = [
