@@ -55,7 +55,7 @@ reveal = [
 ]
 # extract = [{ run = "ya pub extract --list %s", desc = "Extract here" }]
 extract = [
-  { run = 'ouch d -y "%s1"', desc = "Extract here with ouch", for = "unix" },
+  { run = "ouch d -y %s1", desc = "Extract here with ouch", for = "unix" },
 ]
 download = [
   { run = "ya emit download --open %S", desc = "Download and open" },

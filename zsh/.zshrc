@@ -31,7 +31,6 @@ alias clr="clear"
 alias lg="lazygit"
 alias ldk="lazydocker"
 alias vpn="sudo openconnect --user syeu@ucsd.edu --authgroup '2-Step Secured - split' vpn.ucsd.edu"
-alias snp="op item get Snippets --reveal --fields "
 
 bindkey -v
 bindkey '^n' menu-complete
