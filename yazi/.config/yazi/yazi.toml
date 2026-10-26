@@ -62,7 +62,7 @@ download = [
   { run = "ya emit download %S", desc = "Download" },
 ]
 satty = [
-  { run = "satty --filename %s1", orphan = true, desc = "Annotate with Satty", for = "unix" },
+  { run = "satty --filename %s1", orphan = true, desc = "Annotate with Satty", for = "liunx" },
 ]
 
 [open]
