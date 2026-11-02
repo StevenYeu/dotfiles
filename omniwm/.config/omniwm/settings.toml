@@ -275,6 +275,16 @@ assignToWorkspace = "3"
 bundleId = "com.firecore.infuse"
 id = "9FEE545D-FD36-425B-9EAB-D9CBB05649E8"
 
+[[appRules]]
+assignToWorkspace = "8"
+bundleId = "com.valvesoftware.steam"
+id = "B3505E60-24E8-4290-8897-1002FC004CEB"
+
+[[appRules]]
+assignToWorkspace = "8"
+bundleId = "com.codeweavers.CrossOver"
+id = "1FB75554-39D4-4528-98CD-E80EF050ED6B"
+
 [[hotkeys]]
 binding = "Option+1"
 id = "toggleScratchpad.1"
