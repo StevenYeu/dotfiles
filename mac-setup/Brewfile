@@ -193,8 +193,6 @@ cask "omniwm"
 cask "postman"
 # Archive manager for data compression and backups
 cask "rar"
-# Control your Sonos system
-cask "sonos"
 # Video game digital distribution service
 cask "steam"
 # Raycast-style command launcher
