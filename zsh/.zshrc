@@ -34,16 +34,6 @@ alias ldk="lazydocker"
 bindkey -v
 bindkey '^n' menu-complete
 bindkey '^p' reverse-menu-complete
-# Vim mode for zsh
-# export VI_MODE_SET_CURSOR=true
-# VI_MODE_CURSOR_INSERT=0
-
-# Pyenv setup
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
 
 # Go version manager setup
 [[ -s "/Users/stevenyeu/.gvm/scripts/gvm" ]] && source "/Users/stevenyeu/.gvm/scripts/gvm"
@@ -53,12 +43,6 @@ source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAD"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-# export FZF_DEFAULT_OPTS="
-# 	--color=fg:#908caa,bg:#191724,hl:#ebbcba
-# 	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-# 	--color=border:#403d52,header:#31748f,gutter:#191724
-# 	--color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
-# 	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 export FZF_DEFAULT_OPTS="
 	--color=fg:#908caa,bg:-1,hl:#ebbcba
 	--color=fg+:#e0def4,bg+:-1,hl+:#ebbcba

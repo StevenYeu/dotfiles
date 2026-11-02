@@ -107,7 +107,7 @@ edgeGaps = true
 infiniteLoop = true
 resizeStepPercent = 5
 singleWindowFit = "fill"
-visibleContainerCount = 2
+visibleContainerCount = 3
 
 [overview]
 enabled = true
@@ -197,7 +197,7 @@ systemStatsButton = true
 transparentBackground = false
 windowLevel = "popup"
 xOffset = 0.0
-yOffset = 0.0
+yOffset = 10.0
 
 [workspaceBar.accentColor]
 alpha = 1.0
@@ -412,11 +412,11 @@ binding = "Control+Option+F"
 id = "moveToWorkspace.6"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+G"
 id = "switchWorkspace.7"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Option+G"
 id = "moveToWorkspace.7"
 
 [[hotkeys]]
@@ -1098,6 +1098,15 @@ displayName = "files"
 id = "56BD9C0F-5C56-4583-A02E-E2ECDD2B3DF6"
 layoutType = "niri"
 name = "7"
+
+[workspaces.monitorAssignment]
+type = "main"
+
+[[workspaces]]
+displayName = "Games"
+id = "9C274196-A852-45AC-A995-00F8582AB670"
+layoutType = "niri"
+name = "8"
 
 [workspaces.monitorAssignment]
 type = "main"
