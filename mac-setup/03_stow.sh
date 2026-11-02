@@ -1,5 +1,3 @@
-stow -t ~ aerospace
-stow -t ~ borders
 stow -t ~ yazi
 stow -t ~ ghostty
 stow -t ~ btop
@@ -8,3 +6,4 @@ stow -t ~ nvim
 stow -t ~ starship
 stow -t ~ tmux
 stow -t ~ zsh
+stow -t ~ omniwm

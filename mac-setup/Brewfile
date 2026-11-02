@@ -3,6 +3,8 @@ tap "felixkratz/formulae", trusted: true
 tap "jesseduffield/lazygit", trusted: true
 tap "mdogan/zulu", trusted: true
 tap "nikitabobko/tap", trusted: true
+tap "notprotonnot/notproton"
+tap "shobhit99/tap"
 tap "tinygo-org/tools", trusted: true
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
@@ -108,6 +110,8 @@ brew "sq"
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Code-search similar to ack
@@ -152,6 +156,8 @@ cask "alfred"
 cask "bitwarden"
 # Audio player
 cask "cog-app"
+# Tool to run Windows software
+cask "crossover"
 # Databases and SQL IDE
 cask "datagrip"
 # App to build and share containerised applications and microservices
@@ -179,6 +185,8 @@ cask "love"
 cask "makemkv"
 # GUI including a set of tools to create, alter and inspect Matroska files (MKV)
 cask "mkvtoolnix-app"
+# Makes Steam Play and CrossOver work together
+cask "notprotonnot/notproton/notproton", trusted: true
 # Tiling window manager
 cask "omniwm"
 # Collaboration platform for API development
@@ -189,6 +197,8 @@ cask "rar"
 cask "sonos"
 # Video game digital distribution service
 cask "steam"
+# Raycast-style command launcher
+cask "shobhit99/tap/supercmd", trusted: true
 # Unpacks archive files
 cask "the-unarchiver"
 # Lossless audio decoder
