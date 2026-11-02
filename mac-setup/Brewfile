@@ -150,8 +150,6 @@ brew "zoxide"
 brew "zsh"
 # TinyGo is a Go compiler for small places. Microcontrollers, WebAssembly, and command-line tools. Based on LLVM.
 brew "tinygo-org/tools/tinygo"
-# Application launcher and productivity software
-cask "alfred"
 # Desktop password and login vault
 cask "bitwarden"
 # Audio player
@@ -163,26 +161,20 @@ cask "datagrip"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 cask "font-geist-mono-nerd-font"
+# Audio converter and CD ripper
+cask "freac"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# 2D and 3D game engine
-cask "godot"
 # Open-source video transcoder
 cask "handbrake-app"
 # Chromium-based web browser
 cask "helium-browser"
-# Utility to hide menu bar items
-cask "hiddenbar"
 # Free and open-source media player
 cask "iina"
 # Desktop reader for Kobo eBooks
 cask "kobo"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# 2D game framework for Lua
-cask "love"
-# Video format converter (transcoder)
-cask "makemkv"
 # GUI including a set of tools to create, alter and inspect Matroska files (MKV)
 cask "mkvtoolnix-app"
 # Makes Steam Play and CrossOver work together
@@ -191,16 +183,12 @@ cask "notprotonnot/notproton/notproton", trusted: true
 cask "omniwm"
 # Collaboration platform for API development
 cask "postman"
-# Archive manager for data compression and backups
-cask "rar"
 # Video game digital distribution service
 cask "steam"
 # Raycast-style command launcher
 cask "shobhit99/tap/supercmd", trusted: true
 # Unpacks archive files
 cask "the-unarchiver"
-# Lossless audio decoder
-cask "xld"
 # Media file tag editor
 cask "yate"
 # Gecko based web browser

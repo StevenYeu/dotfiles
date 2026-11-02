@@ -64,6 +64,9 @@ download = [
 satty = [
   { run = "satty --filename %s1", orphan = true, desc = "Annotate with Satty", for = "linux" },
 ]
+annotate = [
+	{ run = "open -a Preview %s1", orphan = true, desc = "Annotate with Preview", for  = "macos"}
+]
 
 [open]
 rules = [
@@ -81,6 +84,7 @@ rules = [
   # Image
   { mime = "image/*", use = [
     "satty",
+    "annotate",
     "open",
     "reveal",
   ] },
