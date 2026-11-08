@@ -17,7 +17,7 @@ red = 0.9215686274509803
 [borders.glow]
 enabled = false
 opacity = 0.6
-radius = 8.0
+radius = 6.0
 
 [clipboard]
 historyEnabled = true
@@ -50,13 +50,13 @@ fullscreenUsesOuterGaps = true
 size = 20.0
 
 [gaps.outer]
-bottom = 20.0
+bottom = 22.0
 left = 30.0
 right = 30.0
-top = 60.0
+top = 62.0
 
 [general]
-animationSpeed = 1.0
+animationSpeed = 1.25
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
@@ -109,7 +109,7 @@ cliFolders = []
 entries = []
 shell = "system"
 shellExecutable = ""
-terminal = "terminal"
+terminal = "ghostty"
 
 [mouseWarp]
 constrainToArrangement = false
@@ -121,7 +121,7 @@ allowOverscroll = false
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "never"
 containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
-edgeGaps = false
+edgeGaps = true
 infiniteLoop = true
 moveWindowStacksIntoColumn = true
 overscrollVisibleStripPercent = 5
@@ -206,7 +206,7 @@ showMenuItems = true
 
 [windowSwitcher]
 commandTab = "activeWorkspace"
-enabled = false
+enabled = true
 optionTab = "allWorkspaces"
 order = "omniLayout"
 scope = "allWorkspaces"
@@ -1190,10 +1190,6 @@ id = "toggleShellWidget.notifications"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleShellWidget.system-stats"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleShellWidget.volume"
 
 [[hotkeys]]
 binding = "Unassigned"
