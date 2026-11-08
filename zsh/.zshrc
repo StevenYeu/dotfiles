@@ -1,8 +1,7 @@
-export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:$HOME/.g:$PATH"
+[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env" 
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH=`go env GOPATH`/bin/:$PATH
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 ZSH_THEME=""
@@ -30,13 +29,11 @@ alias dps="docker ps"
 alias clr="clear"
 alias lg="lazygit"
 alias ldk="lazydocker"
+alias g="$HOME/.g/bin/g"
 
 bindkey -v
 bindkey '^n' menu-complete
 bindkey '^p' reverse-menu-complete
-
-# Go version manager setup
-[[ -s "/Users/stevenyeu/.gvm/scripts/gvm" ]] && source "/Users/stevenyeu/.gvm/scripts/gvm"
 
 # Fzf setup
 source <(fzf --zsh)
@@ -92,3 +89,4 @@ eval "$(starship init zsh)"
 
 # Zoxide 
 eval "$(zoxide init zsh)"
+
