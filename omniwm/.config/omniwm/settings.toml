@@ -331,6 +331,14 @@ assignToWorkspace = "8"
 bundleId = "com.codeweavers.CrossOver"
 id = "1FB75554-39D4-4528-98CD-E80EF050ED6B"
 
+[[appRules]]
+assignToWorkspace = "3"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = ""
+id = "B9169997-18D0-44E9-AF11-C3EF694E4171"
+titleSubstring = "Termusic Player"
+
 [[hotkeys]]
 binding = "Option+1"
 id = "toggleScratchpad.1"
@@ -1182,10 +1190,6 @@ id = "toggleShellWidget.control-center"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleShellWidget.hidden-bar"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleShellWidget.notifications"
 
 [[hotkeys]]
 binding = "Unassigned"
