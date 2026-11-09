@@ -42,7 +42,7 @@ function render(ctx)
             if m.showDate then
                 props[#props + 1] = look.text{ text = m.date, size = 13 * scale, color = "secondaryForeground" }
             end
-            props[#props + 1] = look.text{ text = m.time, size = 13 * scale, weight = "medium", reserve = "00:00 PM" }
+            props[#props + 1] = look.text{ text = m.time, size = 13 * scale, weight = "medium", reserve = "00:00" }
         end
         button = look.bar(ctx, props)
     end

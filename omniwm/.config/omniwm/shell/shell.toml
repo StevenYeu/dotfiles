@@ -20,7 +20,7 @@ showIcon = false
 percent = "inside"
 
 [profiles.default.widgets.clock]
-date = false
+date = true
 icon = false
 
 [profiles.default.widgets.control-center]

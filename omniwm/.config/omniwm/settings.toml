@@ -47,13 +47,13 @@ raiseOnMouseFocus = false
 
 [gaps]
 fullscreenUsesOuterGaps = true
-size = 20.0
+size = 16.0
 
 [gaps.outer]
 bottom = 32.0
-left = 30.0
-right = 30.0
-top = 62.0
+left = 16.0
+right = 16.0
+top = 32.0
 
 [general]
 animationSpeed = 1.25
@@ -120,13 +120,13 @@ margin = 1
 allowOverscroll = false
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "never"
-containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
+containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666, 1.0]
 edgeGaps = true
 infiniteLoop = false
 moveWindowStacksIntoColumn = true
 overscrollVisibleStripPercent = 5
 resizeStepPercent = 5
-singleWindowFit = "fill"
+singleWindowFit = "container_primary_span"
 visibleContainerCount = 1
 
 [overview]
