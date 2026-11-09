@@ -1,5 +1,7 @@
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:$HOME/.g:$PATH"
 [ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env" 
+
+
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -12,6 +14,8 @@ zsh-autosuggestions
 zsh-nvm
 zsh-autocomplete
 )
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 alias tms="tmux-sessionizer.sh" 
