@@ -1,0 +1,85 @@
+
+[profiles]
+
+[profiles.default]
+center = []
+leading = ["active-workspace"]
+scheme = "content"
+theme = "rose-pine"
+trailing = ["omniwm", "wifi", "control-center", "battery-details", "clock", "system-stats"]
+
+[profiles.default.widgets]
+
+[profiles.default.widgets.active-workspace]
+highlightFocused = false
+showApp = false
+showCount = false
+showIcon = false
+
+[profiles.default.widgets.battery-details]
+percent = "inside"
+
+[profiles.default.widgets.clock]
+date = false
+icon = false
+
+[profiles.default.widgets.control-center]
+tab = "overview"
+
+[profiles.default.widgets.omniwm]
+iconColor = "#faf4edff"
+
+[profiles.default.widgets.privacy]
+icons = false
+
+[profiles.default.widgets.volume]
+step = 5.0
+
+[profiles.default.widgets.workspaces]
+compact = true
+indicator = "pills"
+occupiedBackground = false
+
+[profiles.default.workspaceBar]
+autoHide = false
+backgroundOpacity = 0.0
+fullWidth = true
+fullWidthNotchMode = "rightOfNotch"
+height = 40.0
+inactiveIconOpacity = 0.5
+position = "overlappingMenuBar"
+reserveLayoutSpace = false
+revealModifier = "off"
+showAccentHighlights = true
+showItemBackgrounds = true
+solidBlackBackground = false
+systemStatsButton = false
+transparentBackground = true
+windowLevel = "popup"
+xOffset = 0.0
+yOffset = 0.0
+
+[[profiles.default.monitorBarOverrides]]
+autoHide = false
+fullWidthNotchMode = "leftOfNotch"
+height = 36.0
+id = "8158ED65-F100-4E9A-98CA-75B3DE9DE51E"
+monitorDisplayUUID = "00096890-3408-C01C-0000-0000CBF73FE3"
+monitorName = "Built-in Retina Display"
+position = "overlappingMenuBar"
+showAccentHighlights = true
+showFloatingWindows = false
+showItemBackgrounds = true
+solidBlackBackground = false
+transparentBackground = true
+windowLevel = "popup"
+xOffset = -0.0
+yOffset = -8.0
+
+[profiles.nocturne]
+theme = "rose-pine"
+
+[weather]
+city = "San Diego"
+refresh = 30.0
+units = "celsius"

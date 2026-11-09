@@ -1,0 +1,24 @@
+[options.showIcon]
+type = "boolean"
+title = "Show icon"
+default = true
+
+[options.showCount]
+type = "boolean"
+title = "Show window count"
+default = true
+
+[options.highlightFocused]
+type = "boolean"
+title = "Highlight focused workspace"
+default = false
+
+[options.showApp]
+type = "boolean"
+title = "Show focused app"
+default = false
+
+[options.invertScroll]
+type = "boolean"
+title = "Invert scroll direction"
+default = false

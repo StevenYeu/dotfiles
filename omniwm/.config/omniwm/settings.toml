@@ -1177,6 +1177,10 @@ id = "toggleSystemStats"
 
 [[hotkeys]]
 binding = "Unassigned"
+id = "toggleShellWidget.active-workspace"
+
+[[hotkeys]]
+binding = "Unassigned"
 id = "toggleShellWidget.battery-details"
 
 [[hotkeys]]
@@ -1198,10 +1202,6 @@ id = "toggleShellWidget.system-stats"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleShellWidget.wifi"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleShellWidget.workspaces"
 
 [[workspaces]]
 displayName = "Web"
