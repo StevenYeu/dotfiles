@@ -113,7 +113,7 @@ terminal = "ghostty"
 
 [mouseWarp]
 constrainToArrangement = false
-enabled = true
+enabled = false
 margin = 1
 
 [niri]
@@ -338,6 +338,17 @@ axSubrole = "AXStandardWindow"
 bundleId = ""
 id = "B9169997-18D0-44E9-AF11-C3EF694E4171"
 titleSubstring = "Termusic Player"
+
+[[appRules]]
+assignToWorkspace = "5"
+bundleId = "com.apple.Home"
+id = "5155FD64-B8D4-4BB6-9284-F7ABE2A7916E"
+
+[[appRules]]
+assignToWorkspace = "5"
+bundleId = "dev.zmk.studio"
+id = "36BF1715-E066-4B53-B6C4-DD0ADFF14466"
+layout = "tile"
 
 [[hotkeys]]
 binding = "Option+1"
