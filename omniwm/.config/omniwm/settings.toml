@@ -95,7 +95,7 @@ workspaceSwipeFingerCount = 3
 
 [hiddenBar]
 enabled = true
-hiddenBundleIDs = ["org.localsend.localsendApp", "us.zoom.xos", "com.docker.docker", "com.bitwarden.desktop", "com.runningwithcrayons.Alfred", "com.apple.ScriptMonitor", "com.codeweavers.CrossOver", "com.sindresorhus.Velja"]
+hiddenBundleIDs = ["org.localsend.localsendApp", "us.zoom.xos", "com.docker.docker", "com.bitwarden.desktop", "com.runningwithcrayons.Alfred", "com.apple.ScriptMonitor", "com.codeweavers.CrossOver", "com.sindresorhus.Velja", "com.wallset.app"]
 rehideIntervalSeconds = 5.0
 
 [island]
@@ -322,6 +322,7 @@ bundleId = "com.firecore.infuse"
 id = "9FEE545D-FD36-425B-9EAB-D9CBB05649E8"
 
 [[appRules]]
+appNameSubstring = "Steam"
 assignToWorkspace = "8"
 bundleId = "com.valvesoftware.steam"
 id = "B3505E60-24E8-4290-8897-1002FC004CEB"
@@ -348,6 +349,21 @@ id = "5155FD64-B8D4-4BB6-9284-F7ABE2A7916E"
 assignToWorkspace = "5"
 bundleId = "dev.zmk.studio"
 id = "36BF1715-E066-4B53-B6C4-DD0ADFF14466"
+layout = "tile"
+
+[[appRules]]
+assignToWorkspace = "8"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = "com.valvesoftware.steam.helper"
+id = "63BAC872-4099-47CA-BCCC-DF703FEDB481"
+titleSubstring = "Steam"
+
+[[appRules]]
+appNameSubstring = "wine"
+assignToWorkspace = "8"
+bundleId = ""
+id = "C3546D7F-613D-41C8-B54A-5C7DA2F202F3"
 layout = "tile"
 
 [[hotkeys]]
@@ -1163,7 +1179,7 @@ binding = "Unassigned"
 id = "removeWindowMark"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Option+Command+B"
 id = "toggleWorkspaceBarVisibility"
 
 [[hotkeys]]
