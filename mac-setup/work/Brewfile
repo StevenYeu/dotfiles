@@ -1,0 +1,178 @@
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
+tap "felixkratz/formulae", trusted: true
+tap "jesseduffield/lazygit", trusted: true
+tap "mdogan/zulu", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "shobhit99/tap"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Mozilla CA certificate store
+brew "ca-certificates"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Secure and free password manager for all of your devices
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Freely available high-quality data compressor
+brew "bzip2"
+# Extract files from Microsoft cabinet files
+brew "cabextract"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Core component of the AcoustID project (Audio fingerprinting)
+# Cross-platform make
+brew "cmake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# JSON, YAML, TOML, XML, and CSV query and modification tool
+brew "dasel"
+# Lightweight, framework-agnostic database migration tool
+brew "dbmate"
+# Modern, maintained replacement for ls
+brew "eza"
+# Command-line batch renaming tool
+brew "f2"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# TIFF library and utilities
+brew "libtiff"
+# Command-line outline and bitmap font editor/converter
+brew "fontforge"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Render markdown on the CLI
+brew "glow"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Asynchronous event library
+brew "libevent"
+# Portable sound library
+brew "libmikmod"
+# Postgres C API library
+brew "libpq"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Unified display of technical and tag data for audio/video
+brew "media-info"
+# Scalable distributed version control system
+brew "mercurial"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Utility for managing network connections
+brew "netcat"
+# Interactive GPU process monitor
+brew "nvtop"
+# Open client for Cisco AnyConnect VPN
+brew "openconnect"
+# Painless compression and decompression for your terminal
+brew "ouch"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Shell command parallelization utility
+brew "parallel"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Fast command-line bittorrent client and server
+brew "rqbit"
+# Data wrangler with jq-like query language
+brew "sq"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Modernized, complete, self-contained TeX/LaTeX engine
+brew "tectonic"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Official tldr client written in Rust
+brew "tlrc"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Maintained ctags implementation
+brew "universal-ctags"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Manage the desktop wallpaper
+brew "wallpaper"
+# Command-line client for WebSockets
+brew "websocat"
+# Internet file retriever
+brew "wget"
+# Binary diff, differential compression tools
+brew "xdelta"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# GTK+ dialog boxes for the command-line
+brew "zenity"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
+# General-purpose lossless data-compression library
+brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Databases and SQL IDE
+cask "datagrip"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+cask "font-geist-mono-nerd-font"
+# Audio converter and CD ripper
+cask "freac"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Chromium-based web browser
+cask "helium-browser"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Tiling window manager
+cask "omniwm"
+# Raycast-style command launcher
+cask "shobhit99/tap/supercmd", trusted: true
+# Unpacks archive files
+cask "the-unarchiver"
+ask "yate"
+# Gecko based web browser
+cask "zen"
+# Video communication and virtual meeting platform
+cask "zoom"
+go "github.com/air-verse/air"
+go "github.com/swaggo/swag/cmd/swag"
+argo "termusic-server"
+uv "esptool"
+npm "corepack"
+npm "serve"
