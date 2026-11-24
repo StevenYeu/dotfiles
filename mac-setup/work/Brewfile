@@ -165,14 +165,14 @@ cask "omniwm"
 cask "shobhit99/tap/supercmd", trusted: true
 # Unpacks archive files
 cask "the-unarchiver"
-ask "yate"
+cask "yate"
 # Gecko based web browser
 cask "zen"
 # Video communication and virtual meeting platform
 cask "zoom"
 go "github.com/air-verse/air"
 go "github.com/swaggo/swag/cmd/swag"
-argo "termusic-server"
+cargo "termusic-server"
 uv "esptool"
 npm "corepack"
 npm "serve"
