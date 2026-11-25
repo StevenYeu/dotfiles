@@ -39,12 +39,17 @@ window-rule {
     open-on-workspace "files"
 }
 window-rule {
-    match app-id="Postman|jetbrains-datagrip"
+    match app-id="Postman"
+    match app-id="jetbrains-datagrip"
+    match app-id="cachyos-pi"
     open-on-workspace "ide"
     open-maximized true
 }
 window-rule {
-    match app-id="cafe.avery.Delfin|moe.tsuna.tsukimi|com.github.rafostar.Clapper|org.jellyfin.JellyfinDesktop"
+    match app-id="cafe.avery.Delfin"
+    match app-id="moe.tsuna.tsukimi"
+    match app-id="com.github.rafostart.Clapper"
+    match app-id="org.jellyfin.JellyfinDesktop"
     open-on-workspace "media"
     open-maximized true
 }
